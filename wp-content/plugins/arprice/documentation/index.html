@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>ReputeInfosystems | ARPrice Documentation</title>
+<meta name="description" content="Create a WordPress pricing table in fraction of time - ARPrice Plugin allows you to make create fully functional pricing table without any coding."  />
+
+<meta name="keywords" content="pricing table plugin,  WordPress pricing table plugin, price table, pricing table, ARPrice, ARPrice - Ultimate WordPress pricing table plugin "  />
+<link rel="stylesheet" href="assets/css/lightbox.css" type="text/css">
+<link rel="stylesheet" href="assets/style.css" type="text/css" media="screen, projection">
+<style type="text/css">
+
+</style>
+<script language="javascript" src="js/jquery-1.11.2.min.js"></script>
+
+<script language="javascript">
+
+jQuery(function($) {
+var amountScrolled = 460;
+
+    $(window).scroll(function() { 
+            if ( $(window).scrollTop() > amountScrolled ) {
+                    $('a.back-to-top').fadeIn('slow');
+            } else {
+                    $('a.back-to-top').fadeOut('slow');
+            }
+    });
+    
+    $('a.back-to-top').click(function() {
+            $('html, body').animate({
+                    scrollTop: 0
+            }, 700);
+            return false;
+    });
+    
+    jQuery(document).on('click', '.panel', function(event) {
+         event.preventDefault();
+         
+         $('.panel').removeClass('active');
+         $('html,body').animate({scrollTop:0}, 'fast','swing');
+
+         var id = this.hash;
+         
+         $('#content').fadeOut('fast',function(){
+            $(this).html($(id).html()).fadeIn();
+         });
+         
+         $(this).addClass('active');
+        
+    });
+
+        var stickyTop = 40; 
+  jQuery(window).scroll(function(){
+                   
+    var windowTop = jQuery(window).scrollTop() + 20; 
+    
+    if (stickyTop < windowTop) 
+    {
+                    $('#header').css({ position: 'fixed', top: 0 , height: '82px' });
+    }
+    else 
+    {
+                    $('#header').css({ position: 'fixed', top: 0 , height: '82px' });
+    }
+    
+    });
+  
+                jQuery("#menu_toggle").click(function(){
+                    jQuery("body").toggleClass("nav_open");
+                });
+                
+                jQuery("#overlay").click(function(){
+                    jQuery("body").toggleClass("nav_open");
+                });
+                
+                jQuery(document).ready(function(){
+                    set_min_height();
+                    jQuery(window).resize(function () {
+                        set_min_height();
+                    });
+                });
+
+                function set_min_height(){
+                    var minheight = jQuery(window).height();
+                    jQuery(".main_wrap").css('min-height', minheight);
+                }        
+});
+
+</script>
+</head>
+<body>
+    <div class="header" id="header">
+        <a class="show_on_mobile" id="menu_toggle">
+            <span class="menu_icon"></span>
+            <span class="vert_divider"></span>
+        </a>        
+        <div class="logo_wrap">
+            <div class="logo"></div>
+        </div>
+    </div>
+
+    <div class="main_wrap">
+        <div class="wrap clearfix">
+            <div id="sidebar">
+                <div id="api_sections">
+                    <h5>Getting Started</h5>
+                    <ul>
+                      <li><a class="panel" href="#intro">Home</a></li>
+                      <li><a class="panel" href="#installation">Installation & Activation</a></li>
+                    </ul>
+                    <h5>Documentation</h5>
+                    <ul>
+                      <li><a class="panel" href="#edit_clone_template">Template Selection</a></li>
+                      <li><a class="panel" href="#install_free_samples">Install Free Samples <sup class="new_feature">New</sup></a></li>
+                      <li><a class="panel" href="#real_time_editor">Real Time Editor</a></li>
+                    </ul>
+                    
+                    <h5>Editor Options</h5>
+                    <ul>
+                      <li><a class="panel" href="#column_settings_options">Column Options</a></li>
+                      <li><a class="panel" href="#effects_options">Effects</a></li>
+                      <li><a class="panel" href="#fonts">Fonts</a></li>
+                      <li><a class="panel" href="#tool-tip">Tool-tip</a></li>
+                      <li><a class="panel" href="#custom_css">Custom CSS</a></li>
+                      <li><a class="panel" href="#toggle_price">Toggle Price </a></li>
+                      <li><a class="panel" href="#import_data">Import Data <sup class="new_feature">New</sup></a></li>
+                      <li><a class="panel" href="#color_scheme">Color Schemes</a></li>
+                      <li><a class="panel" href="#custom_color_scheme">Custom Color Option</a></li>
+                    </ul>
+                    
+                    <h5>Column Level Options</h5>
+                    <ul>
+                      <li><a class="panel" href="#column_settings">Column Settings</a></li>
+                      <li><a class="panel" href="#header_settings">Header Settings</a></li>
+                      <li><a class="panel" href="#desc_settings">Description Settings</a></li>
+                      <li><a class="panel" href="#price_settings">Price Settings</a></li>
+                      <li><a class="panel" href="#body_settings">Body Settings</a></li>
+                      <li><a class="panel" href="#button_settings">Footer Settings</a></li>
+                    </ul>
+                    <h5>Supports</h5>
+                    <ul>
+                      <li><a class="panel" href="#paypal_integration">PayPal Integration</a></li>
+                      <li><a class="panel" href="#woocommerce_integration">WooCommerce Integration</a></li>
+                      <li><a class="panel" href="#arforms_integration">ARForms Integration</a></li>
+                      <li><a class="panel" href="#armember_integration">ARMember Integration</a></li>
+                      <li><a class="panel" href="#chargebee_integration">Chargebee Integration</a></li>
+                        
+                    </ul>
+                    <h5>Other Options</h5>
+                    <ul>
+                      <li><a class="panel" href="#template_preview">Pricing Table Preview</a></li>
+                      <li><a class="panel" href="#publish_pricing_table">Publish Your Pricing Table</a></li>
+                      <li><a class="panel" href="#import_export_templates">Import-Export Templates</a></li>
+                      <li><a class="panel" href="#import_from_arprice_lite">Import Lite version Table<sup class="new_feature">New</sup></a></li>
+                      <li><a class="panel" href="#global_settings">Global Settings</a></li>
+                      <li><a class="panel" href="#ab_testing">A/B testing <sup class="new_feature">New</sup></a></li>
+                      
+                    </ul>
+                    <h5>Page Builder</h5>
+                    <ul>
+                      <li><a class="panel" href="#gutenberg_support">Gutenberg</a></li>
+                      <li><a class="panel" href="#wpbakery_support">Visual Composer</a></li>
+                      <li><a class="panel" href="#cornerstone_support">Cornerstone</a></li>
+                      <li><a class="panel" href="#elementor_support">Elementor</a></li>
+                      <li><a class="panel" href="#king_composer_support">King Composer</a></li>
+                      <li><a class="panel" href="#beaver_builder_support">Beaver Builder</a></li>
+                    </ul>
+                    <h5>Reference</h5>
+                    <ul>
+                      <li><a class="panel" href="#sources_credits">Sources & Credits</a></li>
+                      <li><a class="panel" href="#changelog">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content">
+                <div id="intro">
+                    <h1>ARPrice - Ultimate WordPress Pricing Table Plugin ( Version: 3.9 )</h1>
+                    <div class="card">
+                        <p><span class="icon_clock"></span><strong>Created:</strong> 17/07/2021</p>
+                        <p><span class="icon_by"></span><strong>By:</strong>&nbsp;<a href="http://www.reputeinfosystems.com" target="_blank">Repute Infosystems</a> </p>
+
+                        <p class="bottom_margin"><span class="icon_email"></span><strong> Email: </strong><a href="mailto:info@reputeinfosystems.com">info@reputeinfosystems.com</a></p>
+                        <p class="alert alert_info">
+                          <i class="ts_icon ts_icon_info_circle"></i>
+                          <b>Note:</b> Please meet minimum requirement of PHP version to 5.6 and WordPress version to 4.0
+                        </p>
+                        <p>Thank you for purchasing our plugin. Please do not forget to rate our product by giving 5 stars. We would be happy to see your comments and stars.</p>
+                        <p>If you have any questions that are beyond the scope of this help file, please feel free to open a support ticket <a href="https://support.arpluginshop.com/" target="_blank">here</a>. Thank you very much!</p>
+                        
+                        <hr>
+                        <h2>What is ARPrice?</h2>
+                        <p>ARPrice is a fully-featured <b>WordPress pricing table plugin</b> that you can use in any type of website. It's very powerful and flexible enough to look perfect in any modern WordPress theme. It's very fast and easy to create stunning pricing tables in just a few seconds.</p>
+                        <p>The best part of ARPrice is its fully-featured admin panel. The first time it's happening that, in Pricing Table history you will have WordPress plugin having <code>DRAG AND DROP</code>columns.  Apart from pricing table content and its font settings, ARPrice will give you the facility to add Videos, Audios, Google Map, And Many More.</p>
+                        <p>To publish any pricing table, you just need a few clicks on settings and it all ready !!! ARPrice is a UNIQUE pricing table plugin having 250+ ready pricing tables for your website. Just pick any of them and you are just done.</p>
+                        
+                        <hr>
+                        <h2>ARPrice Key Features:</h2>
+                        <ul class="large_bottom_margin">
+                           <li><strong>Fully Featured Admin Panel</strong> Having <code>DRAG AND DROP</code> & <code>Re-sizable</code> Columns.</li>
+                           <li><code>Unlimited Colors</code> facility that helps to give beautiful look to Templates.</li>
+                           <li><code>Toggle price</code> Button up to <code>8 steps</code>.</li>
+                           <li>Facility for making <code>Full Column Click-able. </code></li>
+                           <li>Facility to <code>Hide sections</code> for better customization.</li>
+                           <li>Facility to <code>customize uploaded media</code> at the header.</li>
+                           <li><code>Responsive</code> Pricing Tables Design.</li>
+                           <li>Support to add <code>unlimited columns</code> in templates.</li>
+                           <li><b>Custom CSS</b> is available for each individual column.</li>
+                           <li>Facility to handle the number of <strong>columns to display</strong> at a <strong>responsive view</strong>.</li>
+                           <li><strong>Real-Time Pricing Table Editor</strong></li>
+                           <li>Customizable <code>Tool-tip</code> Support</li>
+                           <li>Provides Customizable <code>Unique Toggle Pricing</code> feature with different styling options.</li>
+                           <li><code>Column Rotation</code> with <strong>lots of options.</strong></li>
+                           <li>Supports different <code>Hover Effects</code> for Active Columns, <code>Navigation Effects</code>, and <code>Animation Effects.</code></li>
+                           <li>Facility to <code>Animate pricing value</code></li>
+                           <li>Supports different <code>Shadow Styles</code> to give better look to columns of templates.</li>
+                           <li><code>Live Preview</code> for <strong>Desktop Version</strong>, <strong>Tablet Version</strong>, and <strong>Mobile Version</strong></li>
+                           <li>Separate Settings for <strong>Header</strong>, <strong>Body</strong>, <strong>Pricing</strong>, and  <strong>Buttons</strong></li>
+                           <li><strong> 170+ </strong>ready Pricing Tables</li>
+                           <li>Fully customizable <strong>Ribbons</strong> support including unique <code>Custom Ribbon</code> feature.</li>
+                           <li>The facility of <code>Post Variables</code> to send with button link or button script</li>
+                           <li><strong>Quick template</strong> <code>duplication</code>.</li>
+                           <li>Support Browser Default Fonts and <code>Google Fonts</code></li>
+                           <li>Available <code>Font Preview</code> with all Font Family option.</li>
+                           <li>Supports <strong>2500+</strong> different <strong>Font Icons</strong> including <code>Font Awesome Icons</code>, <code>Material Design Icons</code>, <code>Typicons</code>, <code>Ionicons</code>.</li>
+                           <li>Support for <code>WPBakery Visual Composer</code></li>
+                           <li>Support for <code>PayPal Script</code> and other shortcodes</li>
+                           <li>Supports <strong>Videos</strong>( <code>YouTube</code>, <code>Vimeo</code>, <code>Screenr</code>, <code>html5</code>, <code>Dailymotion</code>, <code>Metacafe</code>)</li>
+                           <li>Supports <strong>Audios</strong>( <code>html5</code>, <code>SoundCloud</code>, <code>Mixcloud</code>, <code>Beatport</code>)</li>
+                           <li>Supports <code>Google map</code>, and many more</li>
+                           <li>Supports <code>WooCommerce</code> Add To Cart Shortcode</li>
+                           <li>Supports <code>S2member</code>, <code>ARForms</code> and other third party shortcodes/scripts</li>
+                           <li>Provides <code>Custom CSS</code> with<strong> CSS Class Information</strong> for the advanced user to customize pricing table</li>
+                           <li>Facility for <code>Footer Content</code></li>
+                           <li>Facility to import data from other templates. </li>
+                           <li>Facility to import <code>sample templates</code> directly.</li>
+                           <li>Facility to <strong>Import and Export Templates.</strong></li>
+                           <li>Provides <code>Statistics</code> and <code>Analytics</code> for each template.</li>
+                           <li>The facility of <strong>Global Settings for Responsive View. </strong></li>
+                           <li>Facility to <code>Hide Blank Rows</code> from the bottom for all columns.</li>
+                           <li>Provides the facility to add <code>character sets</code> with google fonts.</li>
+                       </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Div Contents --> 
+            <div class="nonecontent" style="display: none;">
+                
+                <div id="intro">
+                    <h1>ARPrice - Ultimate WordPress Pricing Table Plugin ( Version: 3.9 )</h1>
+                    <div class="card">
+                        <p><span class="icon_clock"></span><strong>Created:</strong> 17/07/2021</p>
+                        <p><span class="icon_by"></span><strong>By:</strong>&nbsp;<a href="http://www.reputeinfosystems.com" target="_blank">Repute Infosystems</a> </p>
+                        <p class="bottom_margin"><span class="icon_email"></span><strong> Email: </strong><a href="mailto:info@reputeinfosystems.com">info@reputeinfosystems.com</a></p>
+                        <p class="alert alert_info">
+                          <i class="ts_icon ts_icon_info_circle"></i>
+                          <b>Note:</b> Please meet minimum requirement of PHP version to 5.6 and WordPress version to 4.0
+                        </p>
+                        <p>Thank you for purchasing our plugin. Please do not forget to rate our product by giving 5 stars. We would be happy to see your comments and stars.</p>
+                        <p>If you have any questions that are beyond the scope of this help file, please feel free to open a support ticket <a href="https://support.arpluginshop.com/" target="_blank">here</a>. Thank you very much!</p>
+                        
+                        <hr>
+                        <h2>What is ARPrice?</h2>
+                        <p>ARPrice is a fully-featured <b>WordPress pricing table plugin</b> that you can use in any type of website. It's very powerful and flexible enough to look perfect in any modern WordPress theme. It's very fast and easy to create stunning pricing tables in just a few seconds.</p>
+                        <p>The best part of ARPrice is its fully-featured admin panel. The first time it's happening that, in Pricing Table history you will have WordPress plugin having <code>DRAG AND DROP</code>columns.  Apart from pricing table content and its font settings, ARPrice will give you the facility to add Videos, Audios, Google Map, And Many More.</p>
+                        <p>To publish any pricing table, you just need a few clicks on settings and it all ready !!! ARPrice is a UNIQUE pricing table plugin having 250+ ready pricing tables for your website. Just pick any of them and you are just done.</p>
+                        
+                        <hr>
+                        <h2>ARPrice Key Features:</h2>
+                        <ul class="large_bottom_margin">
+                           <li><strong>Fully Featured Admin Panel</strong> Having <code>DRAG AND DROP</code> & <code>Re-sizable</code> Columns.</li>
+                           <li><code>Unlimited Colors</code> facility that helps to give beautiful look to Templates.</li>
+                           <li><code>Toggle price</code> Button up to <code>8 steps</code>.</li>
+                           <li>Facility for making <code>Full Column Click-able. </code></li>
+                           <li>Facility to <code>Hide sections</code> for better customization.</li>
+                           <li>Facility to <code>customize uploaded media</code> at the header.</li>
+                           <li><code>Responsive</code> Pricing Tables Design.</li>
+                           <li>Support to add <code>unlimited columns</code> in templates.</li>
+                           <li><b>Custom CSS</b> is available for each individual column.</li>
+                           <li>Facility to handle the number of <strong>columns to display</strong> at a <strong>responsive view</strong>.</li>
+                           <li><strong>Real-Time Pricing Table Editor</strong></li>
+                           <li>Customizable <code>Tool-tip</code> Support</li>
+                           <li>Provides Customizable <code>Unique Toggle Pricing</code> feature with different styling options.</li>
+                           <li><code>Column Rotation</code> with <strong>lots of options.</strong></li>
+                           <li>Supports different <code>Hover Effects</code> for Active Columns, <code>Navigation Effects</code>, and <code>Animation Effects.</code></li>
+                           <li>Facility to <code>Animate pricing value</code></li>
+                           <li>Supports different <code>Shadow Styles</code> to give better look to columns of templates.</li>
+                           <li><code>Live Preview</code> for <strong>Desktop Version</strong>, <strong>Tablet Version</strong>, and <strong>Mobile Version</strong></li>
+                           <li>Separate Settings for <strong>Header</strong>, <strong>Body</strong>, <strong>Pricing</strong>, and  <strong>Buttons</strong></li>
+                           <li><strong> 170+ </strong>ready Pricing Tables</li>
+                           <li>Fully customizable <strong>Ribbons</strong> support including unique <code>Custom Ribbon</code> feature.</li>
+                           <li>The facility of <code>Post Variables</code> to send with button link or button script</li>
+                           <li><strong>Quick template</strong> <code>duplication</code>.</li>
+                           <li>Support Browser Default Fonts and <code>Google Fonts</code></li>
+                           <li>Available <code>Font Preview</code> with all Font Family option.</li>
+                           <li>Supports <strong>2500+</strong> different <strong>Font Icons</strong> including <code>Font Awesome Icons</code>, <code>Material Design Icons</code>, <code>Typicons</code>, <code>Ionicons</code>.</li>
+                           <li>Support for <code>WPBakery Visual Composer</code></li>
+                           <li>Support for <code>PayPal Script</code> and other shortcodes</li>
+                           <li>Supports <strong>Videos</strong>( <code>YouTube</code>, <code>Vimeo</code>, <code>Screenr</code>, <code>html5</code>, <code>Dailymotion</code>, <code>Metacafe</code>)</li>
+                           <li>Supports <strong>Audios</strong>( <code>html5</code>, <code>SoundCloud</code>, <code>Mixcloud</code>, <code>Beatport</code>)</li>
+                           <li>Supports <code>Google map</code>, and many more</li>
+                           <li>Supports <code>WooCommerce</code> Add To Cart Shortcode</li>
+                           <li>Supports <code>S2member</code>, <code>ARForms</code> and other third party shortcodes/scripts</li>
+                           <li>Provides <code>Custom CSS</code> with<strong> CSS Class Information</strong> for the advanced user to customize pricing table</li>
+                           <li>Facility for <code>Footer Content</code></li>
+                           <li>Facility to import data from other templates. </li>
+                           <li>Facility to import <code>sample templates</code> directly.</li>
+                           <li>Facility to <strong>Import and Export Templates.</strong></li>
+                           <li>Provides <code>Statistics</code> and <code>Analytics</code> for each template.</li>
+                           <li>The facility of <strong>Global Settings for Responsive View. </strong></li>
+                           <li>Facility to <code>Hide Blank Rows</code> from the bottom for all columns.</li>
+                           <li>Provides the facility to add <code>character sets</code> with google fonts.</li>
+                       </ul>
+                    </div>
+                </div>
+                
+                <div id="installation">
+                    <h1>Installation And Activation</h1>
+                    <div class="card">
+                       <p>You can install plugin either of these two methods.</p>
+                       
+                       <h3>New install via  FTP </h3>
+                       <ol class="large_bottom_margin bottom_margin" type="a">
+                           <li>Download the plugin from CodeCanyon, and extract it. You should find a directory <strong>arprice.</strong></li>
+                           <li>In your WordPress installation, upload <strong>arprice</strong> to <code>wp-content/plugins/</code></li>
+                           <li>Activate the <strong>"ARPrice"</strong> plugin through the <strong>Plugins</strong> menu from the WordPress admin panel.</li>
+                       </ol>
+                        
+                        <h3>New install via the WordPress Uploader </h3>
+                        <ol class="large_bottom_margin bottom_margin" type="a">
+                            <li>Download the plugin from <code>CodeCanyon</code></li>
+                            <li>Log in to your WordPress admin panel</li>
+                            <li>Go to <code>Plugins</code> -> <code>Add New</code> -> <code>Upload</code></li>
+                            <li>Click on choose file and browse the download package from <code>CodeCanyon</code>. When the plugin uploads successfully, click on <code>Activate Plugin</code>.</li>
+                        </ol>
+
+                        <p class="bottom_margin">After activating the plugin, you will be able to see the <strong>ARPrice</strong> menu in the admin left menu.</p>
+                        <p class="doc_image"><a href="assets/images/ARprice_plugin_installation.png" rel="lightbox"><img src="assets/images/ARprice_plugin_installation.png" alt="ARPrice - Plugin Installation" title="ARPrice - Plugin Installation" /></a></p>
+                        <h4>ARPrice License Activation</h4>
+                        <p>After activating the plugin, you need to activate your license for support and automatic upgrades. You will get the pricing table analytics feature only after activating your license. A license key will only be used for one installation of WordPress at a time.</p>
+                        <p class="bottom_margin">Click on <code>Settings</code> link under "ARPrice" Menu to activate your license. You will see the below section there on that page. To activate your license, you need to enter your Name, Email address and purchase code( Unique code obtained while purchased this product).</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_activation.png" rel="lightbox"><img src="assets/images/ARPrice_activation.png" alt="ARPrice - Plugin Activation" title="ARPrice - Plugin Activation"/></a></p>
+                        
+                        <h2>ARPrice Update</h2>
+                        <h4>Auto Update</h4>
+                        <p style="color: red;">Please, take a backup of your database, your all pricing tables, <code>uploads > arprice</code> folder and <code>Plugins > arprice</code> folder</p>
+
+                        <ol class="large_bottom_margin bottom_margin" type="a">
+                            
+                          <li>In your WordPress admin, go to <code>Plugins > Installed Plugins</code></li>
+                          <li>m here you can update ARPrice Plugin directly from an available update link for ARPrice.</li>
+                        </ol>
+
+                        <h4>Manual Update</h4>
+                        <ol class="large_bottom_margin bottom_margin" type="a">
+                            <li>Download the latest version of the plugin.</li>
+                            <li>Unzip the downloaded file to your computer.</li>
+                            <li>Take Backup of ARPrice directory (backup must be kept outside of plugins folder otherwise it will give an error).</li>
+                            <li>Upload the new plugin source code <code>/ARPrice/</code> directory to the <code>/wp-content/plugins/</code> directory of your site by using FTP software or using File Manager in the hosting panel.</li>
+                            <li>Activate the plugin through the 'Plugins' menu in WordPress</li>
+                        </ol> 
+                    </div>
+                </div>
+                
+                <div id="edit_clone_template">
+                    <h1>Template Selection</h1>
+                    <div class="card">
+                        <p>Before starting please refer <strong>Documentation</strong> or <strong>Tour Guide</strong> from right buttons at ARPrice home page to understand better.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_guide.png" rel="lightbox"><img src="assets/images/ARPrice_guide.png" alt="ARPrice - Guide" title="ARPrice - Guide"/></a></p>
+
+                        <hr>
+                        <h3>CREATE NEW</h3>
+                        <p>ARPrice provides lots of beautiful pricing tables ready to use at Create New section. You have two blocks here as following,</p>
+                        <br>
+                        <h4>Select Pricing Table:</h4>
+                        <p>Here is the list of all inbuilt templates of ARPrice which can be easily cloned and customized.</p>
+                        <p>Preview template on click Preview icon and select your favorite template either click on Select icon or double click on your favorite template and customize according to your requirements.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_edit_template.png" rel="lightbox"><img src="assets/images/ARPrice_edit_template.png" alt="ARPrice - Edit/Clone Template" title="ARPrice - Edit/Clone Template"/></a></p>
+                        <br>
+                        <h4>Install Free Samples: <sup class="new_feature">New</sup></h4>
+                        <p>ARPrice provides lots of Readymade pricing templates which you can browse and install directly in your site after activating the license for ARPrice.</p>
+                        <p>Please visit <a class="panel" href="#install_free_samples">Install Free Samples</a> for more details.</p>
+
+                        <hr>
+                        <h3>MY PRICING TABLES</h3>
+                        <p>All your saved templates will be listed here with Title, Last modified date, Statistics, Shortcode. On hover on each template, you can see options for preview/edit/duplicate/delete your template.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_my_pricing_table.png" rel="lightbox"><img src="assets/images/ARPrice_my_pricing_table.png" alt="ARPrice - My Pricing Table" title="ARPrice - My Pricing Table"/></a></p>
+
+                    </div>
+                </div>
+
+                <div id="install_free_samples">
+                    <h1>Install Free Samples</h1>
+                    <div class="card">
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i> Please note that the sample template will be installed directly only if the ARPrice license is activated and valid in your site.</p>
+                        <p>ARPrice provides lots of Readymade pricing templates that you can browse and install directly on your site. To browse free samples please go to <strong>ARPrice dashboard</strong> -&gt; <strong>Create New</strong> -&gt; <strong>Install Free Samples</strong>.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_samples_dashboard.png" rel="lightbox"><img src="assets/images/ARPrice_samples_dashboard.png" alt="ARPrice - Install Free Samples" title="ARPrice - Install Free Samples"/></a></p>
+
+                        <p>After click on Install Free Samples, you will get a list of free samples as you can see in the below screenshot. When you hover on any sample thumbnail you will get two buttons which are following,</p>
+                        <ul class="bottom_margin large_bottom_margin">
+                            <li><strong>Install : </strong><p>Click here to install the sample template on your site.</p></li>
+                            <li><strong>Preview : </strong><p>Click here to get a preview for the sample template. It will redirect you to <a href="https://www.arpriceplugin.com/samples/" target="_blank">ARPrice samples</a> where all samples are available.</p></li>
+                        </ul>
+                        <!-- <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i> Please note that sample template will be installed directly only if ARPrice license is activated and valid in your site.</p> -->
+                        <p class="doc_image"><a href="assets/images/ARPrice_download_sample.png" rel="lightbox"><img src="assets/images/ARPrice_download_sample.png" alt="ARPrice - Download Sample" title="ARPrice - Download Sample"/></a></p>
+                        
+                    </div>
+                </div>
+
+                <div id="real_time_editor">
+                    <h1>Real Time Editor</h1>
+                    <div class="card">
+                        <p>ARPrice is the only pricing table plugin worldwide to provide this type of state of the art Editor. It's really user-friendly that any novice person too creates beautiful pricing tables and put on the page without having any programming knowledge.</p>
+                        <p>The following picture shows you a basic view of the editor. A detailed explanation of each portion is explained in separate sections.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_real_time_editor.png" rel="lightbox"><img src="assets/images/ARPrice_real_time_editor.png" alt="ARPrice - Real time Editor" title="ARPrice - Real time Editor"/></a></p>
+                        <p>There are lots of options for the template, columns and inner sections of columns like colors, size, fonts, etc.</p>
+
+                        <p>As you can see in the picture there are options in the right corner. Each of these is described in detail in separate sections.</p>
+                        <br>
+                        <h3>Template Width</h3>
+                        <p>You are able to set the width of your template in pixels according to your requirements from the right corner. It will be applied to your template <strong>Right away</strong>.</p>
+                        <p>You will able to see a line at our real-time editor which will wrap your template according to a given width.</p>
+                        <p>The number of columns in a row will be arranged according to the template width you have set.</p>
+                        <p>For Example, If you set width <strong>1000px</strong> and column width set <strong>200px</strong> then you will have 5 columns in a row.</p>
+                        <br>
+                        <h3>Custom Colors</h3>
+                        <p>Please visit the <a class="panel" href="#custom_color_scheme">Custom Color Options</a> page to get more detail about the unlimited colors facility.</p>
+
+                        <hr>
+                        <p>Other basic facilities are also there which are following with basic description</p>
+                        <ul class="bottom_margin large_bottom_margin">
+                            <li><strong>Editable Template Title :</strong><p>You can see in the left top ARPrice gives the default template title which can be edited.</p></li>
+                            <li><strong>Save :</strong><p>At the top right corner first icon is to save your template.</p></li>
+                            <li><strong>Preview :</strong><p>At the top right corner second icon is to get a preview of the template before saving the customization of the template. You can get more about this feature at <a class="panel" href="#template_preview">Pricing Table Preview</a>.</p></li>
+                            <li><strong>Cancel/Close :</strong><p>At last, there is a basic close/cancel icon to get out of the template editor and go back to ARPrice home.</p></li>
+                        </ul>
+
+                        <hr>
+                        <h3>Added Invalid/Broken HTML?</h3>
+                        <p>When you are adding/changing content at any section of any column in the pricing table, and if your content has invalid HTML structure then you will get an alert at there when you come out of textarea with two action buttons of either fixing the content or to ignore it.</p>
+                        <p>So if you want to fix content then click on the Fix button, it will fix your content of textarea.</p>
+                    </div>
+                </div>
+                
+                <div id="column_settings_options">
+                    <h1>Column Options</h1>
+                    <div class="card">
+                        <p>Here you'll find column related options. Any change from here will be applied to all columns in the template and see an instant change in the editor.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_column_option.png" rel="lightbox"><img src="assets/images/ARPrice_column_option.png" alt="ARPrice - Column Options" title="ARPrice - Column Options"/></a></p>
+                        <p>Let's see each option in detail here.</p>
+                        <br>
+                        <h3>Column Width</h3>
+                        <p>Here you can change the width of each column of your pricing table. The width should be in pixels.</p>
+                        <hr>
+                        <h3>Space between Columns</h3>
+                        <p>Here provide an option for you to set space between all columns. Space you have entered will be in pixels.</p>
+                        <hr>
+                        <h3>Minimum Row Height</h3>
+                        <p>Here you can set the minimum height of each row. The height should be set in pixels.</p>
+                        <hr>
+                        <h3>Responsive Column</h3>
+                        <p>Here you have a choice whether you want responsive columns or not. If you check Responsive column option columns width will be set automatically at responsive views. If you have not checked this option then columns will have fix width at all views. </p>
+                        <hr>
+                        <h3>Display Columns</h3>
+                        <p> Here you have the option to set the number of columns to display in the <strong>mobile view</strong> and <strong>tablet view.</strong></p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>A number of columns to be displayed is dependent on the column's width as well as the responsive option set or not.</p>
+                        <ul class="italic" style="list-style:none;">
+                            <li><strong>e.g.</strong></li>
+                            <li>If the Responsive column is set then the width will be divided equally to each column to be displayed. If the Responsive column is not set then columns will be displayed according to given column width.</li>
+                        </ul>
+                        <hr>
+
+                        <h3>Full column click-able</h3>
+                        <p>ARPrice provides the facility for making the entire column clickable. If this option is checked you will be able to run a button script or link by click anywhere on the column. This facility will help if you want the default button/column footer hidden.</p>
+                        <hr>
+                        <h3>Column Radius </h3>
+                        <p>Here you have the option to set a column radius. You are able to set the radius for each corner individually in pixels.</p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>The column radius will be disabled if you have selected column shadow style from effects.</p>
+                        <hr>
+                        <h3>Hide Caption Column</h3>
+                        <p>ARPrice provides some templates with caption column and you are able to hide the caption column if you may no required of it.</p>
+                        <hr>
+                        <h3>Hide blank rows from bottom</h3>
+                        <p>ARPrice provides the option to hide blank rows. This will hide blank rows from the <strong>bottom</strong> only.</p>
+                        <hr>
+                        <h3>Hide Column Sections</h3>
+                        <p>You may not need a particular section of the template, for that ARPrice provides a unique feature to hide sections. This will help if you want only an informative template like persons' profiles. If you select this option then the hidden section will blur in the editor.</p>
+                        <p>Following section, you can hide :</p>
+                        <ul class="bottom_margin">
+                            <li>Hide Header</li>
+                            <li>Hide Shortcode</li>
+                            <li>Hide Price</li>
+                            <li>Hide Body</li>
+                            <li>Hide Button</li>
+                        </ul>
+                        <hr>
+                        <h3>Opacity</h3>
+                        <p>ARPrice also provides the facility to set the Opacity of your pricing table. If you used an image in your pricing table and you want to give opacity, you can do it from this option by just selecting the value for opacity and "save" pricing table.</p>
+                        <hr>
+                        <h3>Column Borders</h3>
+                        <p>Set column borders from here having another option as following,</p>
+                        <ul class="bottom_margin">
+                            <li>Border Size</li>
+                            <li>Border Type</li>
+                            <li>Border Color</li>
+                            <li>Border Position [Left, Right, Top, Bottom]</li>
+                        </ul>
+                        <hr>
+                        <h3>Row Borders</h3>
+                        <p>Set row borders at each column from here having another option as following,</p>
+                        <ul class="bottom_margin">
+                            <li>Border Size</li>
+                            <li>Border Type</li>
+                            <li>Border Color</li>
+                        </ul>
+                        <hr>
+                        <h3>Button Style Options</h3>
+                        <p>Change style for the button of each column from here. Let's see each option provided here.</p>
+                        <br>
+                        <h4>Button Type :</h4>
+                        <p>ARPrice provides different types of the button which give the better look of the button. Following is a list of button types provided by ARPrice.</p>
+                        <ul class="bottom_margin">
+                            <li>Flat</li>
+                            <li>Classic</li>
+                            <li>Border</li>
+                            <li>Reverse Border</li>
+                            <li>Modern</li>
+                            <li>Shadow</li>
+                        </ul>
+                        <br>
+                        <h4>Border Radius :</h4>
+                        <p>Here you are able to set border radius for each column. You are able to set a radius for each corner individually in pixels.</p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>Border radius will be disabled if you have selected column shadow style from effects.</p>
+                        
+                    </div>
+                </div>
+                <!-- Done up to Here -->
+                <div id="effects_options">
+                    <h1>Effects Options</h1>
+                    <div class="card">
+                        <p>ARPrice provides an individual section to set column animation and effects.</p>
+                        <p>Each option is described here in detail.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_Effects.png" rel="lightbox"><img src="assets/images/ARPrice_Effects.png" alt="ARPrice - Effects" title="ARPrice - Effects"/></a></p>
+                        <br>
+                        <h3>Background Image</h3>
+                        <p>Select and upload an image and set as a background image on template wrapper by click button placed on the right side.</p>
+                        <hr>
+
+                        <h3 class="bottom_margin">Hover Effects</h3>
+                        <ul class="large_bottom_margin bottom_margin">
+                          <li>
+                            <h4>Disable Hover Effect</h4>
+                            <p>You may want not effects on the hover column than switch ON here to disable active column effects and hover color changes.</p>
+                          </li>
+                          <li>
+                            <h4>Disable Button Hover Effect</h4>
+                            <p>ARPrice ready templates have also hovered effect for buttons which you may not require then you are able to disable button hover effect from here.</p>
+                          </li>
+                        </ul>
+                        <hr>
+
+                        <h3>Active Column</h3>
+                        <p>Here you have the number of effects to apply on the column when hovering on it.</p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>If you have selected column shadow styles then you will not be able to select the Shadow effect here.</p>
+                        <p>Following effects are provided by ARPrice :</p>
+                        <ul class="bottom_margin">
+                            <li>Hover Effect</li>
+                            <li>Shadow effect</li>
+                            <li>Pulse</li>
+                            <li>Shake</li>
+                            <li>Swing</li>
+                            <li>Hang</li>
+                            <li>Wobble</li>
+                        </ul>
+                        <hr>
+
+                        <h3>Column Shadow</h3>
+                        <p>ARPrice also provides different styles of column shadows which help to give columns a better look. </p>
+                        <p>ARPrice provides five different column shadows.</p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>If you select any column shadow style then column radius will be disabled, As well as this option will be visible only if you have not selected shadow effects from <strong>Effects</strong> option</p>
+
+                        <hr>
+                        <h3 class="bottom_margin">Animate Price</h3>
+                        <ul class="large_bottom_margin bottom_margin">
+                            <li>
+                                <h4>Price(Number) Spin Effect On Toggle</h4>
+                                <p>If you enabled Toggle Price then you are able to use our another feature which is an animate price on switch toggle. </p>
+                                <p>To use this feature you have to wrap your pricing number with class <code><strong>arp_price_amount</strong></code> with span tag. It will animate numbers of pricing while toggling.</p>
+                                <p>If you have the price with comma(,) as a decimal separator and want to animate, then add <code><strong>arp_comma_decimal</strong></code> class in the span tag.</p>
+                            </li>
+                        </ul>
+                        <hr>
+
+                        <h3 class="bottom_margin">Toggle Effect</h3>
+                        <p>If you enabled Toggle Price, then you are ablt to use our new feature which is effect on toggle.</p>
+                        <p>Following effects are available to set on toggle pricing option.</p>
+                        <ul class="bottom_margin">
+                          <li>Fade</li>
+                          <li>Flip 180</li>
+                          <li>Flip 360</li>
+                          <li>Pulse</li>
+                          <li>Shake</li>
+                          <li>Zoom In</li>
+                        </ul>
+
+                        <h3>Column Rotation</h3>
+                        <p>Here we are provided a unique feature of column rotation which will display your columns in the slider. If you enable column rotation then other options related to rotation will be enabled which are described here.</p>
+                        
+                        <ul>
+                            <li>
+                                <h4>Visible Columns</h4>
+                                <p>Here you have a choice to display the number of columns according to your requirements.</p>
+                            </li>
+                            <li>
+                                <h4>Visible Columns for Tablet</h4>
+                                <p>Here you have a choice to dispaly the number of columns while rotation is enabled for tablet view only. Tablet width will be consider from the ARPrice > Settings page.</p>
+                            </li>
+                            <li>
+                                <h4>Columns to scroll</h4>
+                                <p>Here number of columns you have set will be slide on navigation.</p>
+                            </li>
+                            <li>
+                                <h4>Transition Speed</h4>
+                                <p>Here you are able to set the speed of sliding your columns. Speed will be in millisecond.</p>
+                            </li>
+                            <li>
+                                <h4>Auto play</h4>
+                                <p>If you check this option your columns will rotate automatically according to speed you have set. This will help if you do not want the navigation button or pagination button.</p>
+                            </li>
+                            <li>
+                                <h4>Sticky Caption Column</h4>
+                                <p>This option will be available only at those templates which have caption column. Here if you caption column not to scroll when column rotation enabled then you are able to have this option.</p>
+                                <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i> This will work only for desktop or tablet view.</p>
+                            </li>
+                            <li>
+                                <h4>Navigation Button</h4>
+                                <p>Here you have a choice whether you want navigation on or off. If you select on here then you will have navigation buttons.</p>
+                            </li>
+                            <li>
+                                <h4>Pagination Button</h4>
+                                <p>Here you have choice of position for pagination buttons whether you want top or bottom. You are also able to set off if you do not want pagination buttons. If you select top or bottom then you will have pagination buttons according to position you have selected.</p>
+                            </li>
+                            <li>
+                                <h4>Navigation Effects</h4>
+                                <p>Here you are provided the number of effects to navigate your columns beautifully.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="fonts">
+                    <h1>Font Settings</h1>
+                    <div class="card">
+                        <p>Here you can find all font settings for each sections of each columns of your pricing table.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_fonts.png" rel="lightbox"><img src="assets/images/ARPrice_fonts.png" alt="ARPrice - Font Settings" title="ARPrice - Font Settings"/></a></p>
+                        <p>You will find all the following sections here for which you may change font settings individually.</p>
+                        <ul class="bottom_margin">
+                            <li>Header Fonts</li>
+                            <li>Pricing Fonts</li>
+                            <li>Body Fonts</li>
+                            <li>Footer Fonts</li>
+                            <li>Button Fonts</li>
+                            <li>Tool-tip Fonts</li>
+                            <li>Toggle Title Fonts</li>
+                            <li>Toggle Tab Fonts</li>
+                        </ul>
+                        <p>And for each section you have the following font options:</p>
+                        <ul class="bottom_margin">
+                            <li>Font Family <strong>[with Font Preview]</strong></li>
+                            <li>Font Size</li>
+                            <li>Alignment</li>
+                            <li>Font Style</li>
+                        </ul>
+                        <hr>
+                        <h3>Common Fonts</h3>
+                        <p>If you need the same font family for each section of all columns so instead of changing fonts for each section you can just change here and will change fonts for all sections easily.</p>
+                    </div>
+                </div>
+                
+                <div id="tool-tip">
+                    <h1>Tool-tip Settings</h1>
+                    <div class="card">
+                        <p>ARPrice allows setting tool-tip on each row for that purpose ARPrice also provides another tool-tip styling options which you can find here.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_Tooltip.png" rel="lightbox"><img src="assets/images/ARPrice_Tooltip.png" alt="ARPrice - tool-tip Settings" title="ARPrice - tool-tip Settings"/></a></p>
+                        <p>Let's see each options provided here:</p>
+                        <h3>Colors</h3>
+                        <p>Select Tool-tip <strong>Background</strong> color and Tool-tip <strong>Text</strong> color here.</p>
+                        <hr>
+                        
+                        <h3>Display Style</h3>
+                        <p>ARPrice provides three types of tool-tip which are following,</p>
+                        <ul class="bottom_margin">
+                            <li>Normal</li>
+                            <li>Alert</li>
+                            <li>Glass</li>
+                        </ul>
+                        <hr>
+
+                        <h3 class="bottom_margin">Show Info Icon</h3>
+                        <p>By default tool-tip displayed on hover at full row but ARPrice provides another way to display tool-tip only on hover or click on the information icon. If this option is checked following options will get visible here,</p>
+                        <ul class="large_bottom_margin bottom_margin">
+                            <li>
+                                <h4>tool-tip Icon</h4>
+                                <p>Change the tool-tip icon from here to be displayed in rows to indicate tool-tip.</p>
+                            </li>
+                            <li>
+                                <h4>Icon Position</h4>
+                                <p>ARPrice allows you to display a tool-tip icon at either <strong>Right Align</strong> or <strong>Float to Content</strong>.</p>
+                            </li>
+                        </ul>
+                        <hr>
+
+                        <h3>Animation Effect</h3>
+                        <p>There are different animation effects for tool-tip to display which are,</p>
+                        <ul class="bottom_margin">
+                            <li>grow</li>
+                            <li>fade</li>
+                            <li>swing</li>
+                            <li>slide</li>
+                            <li>fall</li>
+                        </ul>
+                        
+                        <hr>
+                        <h3>tool-tip Width</h3>
+                        <p>Set tool-tip width in pixels to display, width (0) zero value indicate auto width.</p>
+                        
+                        <hr>
+                        <h3>Show On</h3>
+                        <p>You have a choice here to either display tool-tip on <strong>click</strong> or <strong>hover</strong>.</p>
+                        
+                        <hr>
+                        <h3>tool-tip Position</h3>
+                        <p>By default tool-tip displays at the top position but you can change position to left, right, top, or bottom from here.</p>
+                    </div>
+                </div>
+                
+                <div id="custom_css">
+                    <h1>Custom CSS</h1>
+                    <div class="card">
+                        <p>To customize the template as per your requirement, you can set CSS for any class from this option. If you want to add your CSS in the pricing table or overwrite any default CSS then you can do it from here in a simple way.</p>
+                        <p>Just pick up any class of pricing table where you want to change and put it in <strong>Custom CSS</strong> block and save the pricing table.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_custom_css.png" rel="lightbox"><img src="assets/images/ARPrice_custom_css.png" alt="ARPrice - Custom CSS" title="ARPrice - Custom CSS"/></a></p>
+                        <p>If you will turn on CSS class info, you will get an <strong>extra button</strong> on each column, which help you to get <strong>css class information</strong> for that particular column which will include Column Level Classes, Header Level Classes, Price Level Classes, Body Level Classes, Feature Level Classes, Footer Classes, Button Classes, Ribbon Classes.</p>
+                        <p>Copy class according to your requirements and add into custom CSS textarea where you will be able to add properties for that class. You will also able to add multiple classes.</p>
+                        <p>Now, you can click on the button <strong>Apply To Editor</strong> which will apply your css at editor instantly.</p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>Some custom CSS properties may not apply to the editor. Please check table Preview for all custom CSS you have applied.</p>
+                        <div class="example bottom_margin">
+                                <h5>Custom CSS</h5>
+                                <pre><code>
+.arp_price_wrapper 
+{
+     color : #990000;
+     font-size : 15px;
+}</code></pre>
+                    </div>
+
+                </div>
+                </div>
+                <div id="toggle_price">
+                    <h1>Toggle Price Options</h1>
+                    <div class="card">
+                        <p>ARPrice provides a very unique customizable toggle price facility having various options and styles.</p>
+                        
+                        <h3>Enable Toggle Price</h3>
+                        <p>First of all, switch ON the enable toggle price option of your template. After that, you will able to change content, styles and other options of toggles.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_toggle_price.png" rel="lightbox"><img src="assets/images/ARPrice_toggle_price.png" alt="ARPrice - Toggle Price" title="ARPrice - Toggle Price"/></a></p>
+                        <hr>
+                        <h3>Copy First Tab Data To Other Tabs</h3>
+                        <p>ARPrice reduces your work by adding the same content to each step's all sections through this option. Click on the <strong>Copy</strong> button and confirm your action to copy your first tab content to all other tabs for each section.</p>
+                        <hr>
+                        <h3>Toggle Button Style</h3>
+                        <p>ARPrice provides five awesome toggle button styles. Select one of the following styles here and see instantly at the editor how it will look. </p>
+                        <ul class="large_bottom_margin bottom_margin">
+                            <li>Switch Style</li>
+                            <li>Radio Style</li>
+                            <li>Border Button Style</li>
+                            <li>Slide Button Style</li>
+                            <li>Stepy Style</li>
+                        </ul>
+                        <hr>
+                        <h3>Mobile View Style</h3>
+                        <p>Here you can change toggle-style by following styles for mobile view only.</p>
+                        <ul class="large_bottom_margin bottom_margin">
+                            <li><h4>Stack:</h4> This will look the same as in desktop view but in a single column.</li>
+                            <li><h4>Dropdown:</h4> This will display the dropdown with all steps label as options in it.</li>
+                        </ul>
+                        <hr>
+                        <h3>Vertical Space</h3>
+                        <p>Here you are able to change vertical space in pixels between template columns and toggle.</p>
+                        <hr>
+                        <h3>Title</h3>
+                        <p>This is optional to display the title for toggles. If you no need to display any title you can keep this blank.</p>
+                        <hr>
+                        <h3>Title Position</h3>
+                        <p>Change your toggle title position to left, right or top.</p>
+                        <hr>
+                        <h3>Toggle Steps</h3>
+                        <p>You are able to extend toggle steps up to 8 steps in ARPrice.</p>
+                        <hr>
+                        <h3>Tabs Label</h3>
+                        <p>Change labels for each number of steps you have selected for the toggle. Click on the right button to Add <code>Font Awesome Icons</code>, <code>Material Design Icons</code>, <code>Typicons</code> and <code>Ionicons</code> in the label.</p>
+                        <p>Another Radio button labeled as Set As Default is placed after each tabs label inputs. Select this option for which step you want active default at front. </p>
+                        <hr>
+                        <h3>Colors</h3>
+                        <p>Here you have <strong>color options</strong> to set font colors and background colors for Active tab and Inactive tab. If you select the Radio Style toggle button then you will have another option for Main Belt Background color.</p>
+                    </div>
+                </div>
+
+                <div id="import_data">
+                    <h1>Import Data</h1>
+                    <div class="card">
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i><strong>Please note that,</strong> Once you confirm to import new table data then your current table data will be overwritten and will not be restored.</p>
+                        <p>In some of the cases, you may need the same content from your saved templates to different styled templates. ARPrice let you get all content from other template and import in your different styled template easily within seconds and save your much time.</p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>Your current pricing table must be saved before import data from other templates.</p>
+                        <p>When you click on the Import Data option in the editor, you will get pop-up where you can select one of your saved templates from listing and click on the <strong>Continue</strong> button.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_import_data.png" rel="lightbox"><img src="assets/images/ARPrice_import_data.png" alt="ARPrice -  Import Data" title="ARPrice -  Import Data"/></a></p>
+                        <p>Now, in the next step, you'll see differences between features exist in your current template and other selected template from where you want to import data. After comparing features if you are sure to import data then click on the <strong>Import</strong> button.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_import_data_comparision.png" rel="lightbox"><img src="assets/images/ARPrice_import_data_comparision.png" alt="ARPrice -  Import Data" title="ARPrice -  Import Data"/></a></p>
+                        <p>Finally, in just a few seconds you will get your current table with imported data from another template.</p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i><strong>Please note that,</strong> Once you confirm to import new table data then your current table data will be overwritten and will not be restored.</p>
+                    </div>
+                </div>
+
+                <div id="color_scheme">
+                    <h1>Color Options</h1>
+                    <div class="card">
+                        <p>In the following picture, you can see the top right corner there is a facility to change the color of your pricing table as per your requirement. Just click your favorite color and it will be applied in your pricing table <b>Right away</b>.</p>
+                        <p>ARPrice provides different colors for each different template according to the template design.</p>
+                        <p>Your selected color will be highlighted by a small round on color as you are able to see in the following picture. ARPrice provides a <strong>Custom Color</strong> option where you will have <strong>Unlimited color</strong> choice. Your template will look beautiful with any color you have selected.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_color_option.png" rel="lightbox"><img src="assets/images/ARPrice_color_option.png" alt="ARPrice -  Column Color Option" title="ARPrice -  Column Color Option"/></a></p>
+                        <p>ARPrice also provides a custom color scheme which is described at <a class="panel" href="#custom_color_scheme">Custom Color Options</a> page.</p>
+                    </div>
+                </div>
+                
+                <div id="custom_color_scheme">
+                    <h1>Custom Color Options</h1>
+                    <div class="card">
+                        <p>ARPrice provides a <strong>Custom Color</strong> option where you will have <strong>Unlimited Colors.</strong> </p>
+                        <p>As you can see in the picture, you are allowed to change colors and hover colors for each section. On change color for a particular section, will apply to related section instantly at the editor.</p>
+
+                        <p>For each section, there are two color options which are <strong>Background Color</strong> and <strong>Text Color</strong>. Same options are available for <strong>hover colors.</strong></p>
+                        <p>There is a list of all sections for which you may want to change colors.</p>
+                        <ul class="bottom_margin">
+                            <li>Header</li>
+                            <li>Pricing</li>
+                            <li>Footer</li>
+                            <li>Button</li>
+                            <li>Odd Rows</li>
+                            <li>Even Rows</li>
+                        </ul>
+
+                        <p class="doc_image"><a href="assets/images/ARPrice_custom_color_option.png" rel="lightbox"><img src="assets/images/ARPrice_custom_color_option.png" alt="ARPrice -  Custom Color Option" title="ARPrice -  Custom Color Option"/></a></p>
+
+                    </div>
+                </div>
+                
+                <div id="column_settings">
+                    <h1>Column Settings</h1>
+                    <div class="card">
+                        <p>ARPrice provides effective functionality to manage individual columns in an easy way. There are lots of functionality as described below:</p>
+                        <br>
+                        <h3>Drag and Drop Column (Rearrange Column)</h3>
+                        <p>You are able to rearrange columns by just simply drag and drop in the editor according to your needs.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_drag_drop_column.png" rel="lightbox"><img src="assets/images/ARPrice_drag_drop_column.png" alt="ARPrice - Drag and Drop Column" title="ARPrice - Drag and Drop Column"/></a></p>
+                        <br>
+                        <h3>Add New Column</h3>
+                        <p>ARPrice allows you to add <strong>Unlimited columns</strong>, so you can add columns easily by just click on <strong>Add New Column.</strong></p>
+                        <p>This will add column with same settings of last column.</p>
+                        <hr>
+
+                        <h2>Column Level Options</h2>
+                        <p>When you hover on a column in the editor, you will get column level options buttons visible on top of the column from where you are able to customize or delete your column. Let's see each column level options in detail.</p>
+
+                        <br>
+                        <h3>Column Settings :</h3>
+                        <p>At column level options the first option of the column settings where you'll see the number of options to customize your column as below,</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_Column_general_option.png" rel="lightbox"><img src="assets/images/ARPrice_Column_general_option.png" alt="ARPrice - Column General Options" title="ARPrice - Column General Options"/></a></p>
+                        <p>You can navigate to the next column or previous column for the same option by click on arrows given below at the options box.</p>
+
+                        <br>
+                        <h4>Background Image</h4>
+                        <p>You may require to set an image as background to give better look to your column then please click on the right side which will open a box where you can select the image.</p>
+                        <p>There is another option available for whether you want to scale your uploaded image and set a position to fit in the column or do not want to scale image.</p>
+
+                        <br>
+                        <h4>Highlight Column</h4>
+                        <p>Please check this option if you required to highlight a particular column. The highlighted column has a set hover effect at the front which you can also see in the preview.</p>
+
+                        <br>
+                        <h4>Add Ribbon</h4>
+                        <p>You can add a ribbon to the package column from here. ARPrice provides plenty of options for the ribbon. Ribbons are totally based on CSS. No images used. You can set ribbon text, ribbon background color, ribbon text color, it's position and much more.</p>
+                        <p>ARPrice also provides a <strong>Custom Ribbon</strong> option where you are able to set <strong>Image</strong> as ribbon according to your requirements.</p>
+                        <p>If you wish to use custom ribbon then please select custom ribbon option from Ribbon Style. You will have <strong>Custom Ribbon</strong> option visible where you can to add image file. You will have another option visible <strong>Custom Position</strong> to set position from Left or Right and from Top.</p>
+                        <p>If you enabled toggle price then there will be options to add custom ribbon or ribbon text for default ribbons for each toggle step.</p>
+                        
+                        <p>You are also able to remove ribbon later by just click on <strong>Remove Ribbon</strong>.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_ribbon_settings.png" rel="lightbox"><img src="assets/images/ARPrice_ribbon_settings.png" alt="ARPrice - Ribbon Options" title="ARPrice - Ribbon Options"/></a></p>
+
+                        <br>
+                        <h4>Post Variables</h4>
+                        <p>As you can see in the above picture ARPrice provides facility to <strong>Post Variables</strong>. Here you have textarea where you can add your variables and it's value. You are allowed to add multiple variables separated by a semicolon.</p>
+                        <p>If you enabled toggle price then there you are able to set variables for each toggle steps.</p>
+                        <div class="example bottom_margin">
+                        <h5>For Example</h5>
+                        <pre><code><strong>Post Variables</strong>plan_id=1;type=arprice;</code></pre></div>
+
+                        <br>
+                        <h4>At caption column,</h4>
+                        <p>For the Caption tables, you will get different options to customize the caption column of your pricing table. Following are options available at caption column settings,</p>
+                        <ul class="bottom_margin">
+                            <li><strong>Width</strong><p>This is optional but if you want custom width for caption column then you can add width in pixels here.</p></li>
+                            <li><strong>Column Borders</strong><p>The set border on your caption column by changing <code>Border Size</code>, <code>Border Style</code> and border side like left, right, top, bottom at <code>Borders</code>.</p></li>
+                        </ul>
+
+                        <br>
+                        <h3>Background and Font Colors :</h3>
+                        <p>The second column level option is for changing colors and hover colors for each section of the particular column with unlimited colors. So now you may change <strong>Background</strong> and <strong>Text Color</strong> for each section of your particular column from here. The same options are also available for hover colors.</p>
+                        <p>Following sections are included for which you may change colors,</p>
+                        <ul class="bottom_margin">
+                            <li>Header</li>
+                            <li>Pricing</li>
+                            <li>Footer</li>
+                            <li>Button</li>
+                            <li>Odd rows</li>
+                            <li>Even rows</li>
+                        </ul>
+                        <p class="doc_image"><a href="assets/images/ARPrice_background_font_color.png" rel="lightbox"><img src="assets/images/ARPrice_background_font_color.png" alt="ARPrice - Background and Font Color" title="ARPrice - Background and Font Color"/></a></p>
+                        <p>You can navigate from the current column to the next column or previous column for the same options by click on arrows given below in the options box.</p>
+
+                        <br>
+                        <h3>Hide/Show Column :</h3>
+                        <p>Click here to hide your particular column in frontend. When you click on this third column level option you will see the blurred effect on the hidden column in editor. If the column is already hidden then it will make your column visible and remove blurred effect in the editor.</p>
+
+                        <br>
+                        <h3>Duplicate Column :</h3>
+                        <p>The fourth column level option provides the facility to duplicate your particular column if you want to add a new column with the same content and settings of the particular column. This facility of ARPrice prevents your lots of time and reduces rework on the new column and add a clone of a particular column.</p>
+
+                        <br>
+                        <h3>Delete Column :</h3>
+                        <p>At last, you have the option to delete any particular column. As you can see in the following picture on click this option you will be asked for confirmation before delete column.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_add_duplicate_delete_column.png" rel="lightbox"><img src="assets/images/ARPrice_add_duplicate_delete_column.png" alt="ARPrice - Add, Duplicate and Delete Column" title="ARPrice - Add, Duplicate and Delete Column"/></a></p>
+
+                        <br>
+                        <h3>CSS Class Information :</h3>
+                        <p>This option is visible at last only if you have turned ON <strong>CSS class info</strong> from <a class="panel" href="#custom_css">Custom CSS</a>. By clicking on this option at a particular column, you will get all CSS class information for that particular column.</p>
+                    </div>
+                </div>
+
+                <div id="header_settings">
+                    <h1>Header Settings</h1>
+                    <div class="card">
+                        <h3>Header Settings</h3>
+                        <p>To customize the header section of a particular column, please hover over the header section of the column you will get a button visible in left/right side for <strong>Header Settings</strong>.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_header_settings.png" rel="lightbox"><img src="assets/images/ARPrice_header_settings.png" alt="ARPrice - Header Settings" title="ARPrice - Header Settings"/></a></p>
+
+                        <br>
+                        <h4>Column Title :</h4>
+                        <p>Add/change the content of the header from here ( for each toggle step if toggle price is enabled ). Also, add media or font icons in header content from the given options below at there.</p>
+
+                        <br>
+                        <h4>Add Media :</h4>
+                        <P>On click here, you will get pop-up where you can select/upload an image and customize dimension in pixel. Click on the Add button to add your selected image into your header content.</P>
+
+                        <br>
+                        <h4>Add Font Icon :</h4>
+                        <P>On click here, you will get pop-up where you can select an icon from lots of icons listed of the following types. When you click on any icon you will be able to customize the size of the icon and add an icon into your header content.</P>
+                        <p>ARPrice provides following icons,</p>
+                        <ul class="bottom_margin">
+                            <li>Font Awesome Icons</li>
+                            <li>Material Design Icons</li>
+                            <li>Typicons</li>
+                            <li>Ionicons</li>
+                        </ul>
+
+                        <br>
+                        <h4>At caption column,</h4>
+                        <p>You will find more options to customize your caption column header content which are following,</p>
+                        <ul class="bottom_margin">
+                            <li>Text Alignment</li>
+                            <li>Font Family</li>
+                            <li>Font Size</li>
+                            <li>Font Style</li>
+                        </ul>
+
+                        <hr>
+                        <h3>Media Settings</h3>
+                        <p>ARPrice provides some media supporting templates where you will get <strong>Media Settings</strong> option visible on the hover header section of the particular column from where you can customize your <strong>Shortcode section</strong> in header by adding image, icon or any other supporting media.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_media_settings.png" rel="lightbox"><img src="assets/images/ARPrice_media_settings.png" alt="ARPrice - Media Settings" title="ARPrice - Media Settings"/></a></p>
+                        <p>Let's see how media can be added or customized in the Shortcode section.</p>
+
+                        <br>
+                        <h4>Additional Short code :</h4>
+                        <p>Here you have textarea where media/icons can be added from below options there. Font icons can be added in the same way as described in header settings.</p>
+
+                        <br>
+                        <h4>Add Media :</h4>
+                        <p>For media supporting templates, this will open modal to add a Shortcode of media in additional Shortcode. The detail description of this topic provided in the <strong>Add Shortcode</strong> section at the bottom.</p>
+
+                        <br>
+                        <h4>Style / Size :</h4>
+                        <p>In some templates, Shortcodes can be shaped from the <strong>Style</strong> option where you have the following styling option.</p>
+                        <ul class="bottom_margin">
+                            <li>Circle (Bordered)</li>
+                            <li>Circle (Solid)</li>
+                            <li>Square (Bordered)</li>
+                            <li>Square (Solid)</li>
+                            <li>Rounded Square (Bordered)</li>
+                            <li>Rounded Square (Solid)</li>
+                        </ul>
+                        <p>Another option available to change the size of the Shortcode. There are some options for Shortcode size as below.</p>
+                        <ul class="bottom_margin">
+                            <li>Small</li>
+                            <li>Medium</li>
+                            <li>Large</li>
+                        </ul>
+
+                        <hr>
+                        <h2 id="add_shortcode_modal">Add Short code</h2>
+                        <p>In this modal first of all, you have so many options to create Shortcode and each option has different relevant options. Let's see the first common option in most of Shortcode.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_shortcode_settings.png" rel="lightbox"><img src="assets/images/ARPrice_shortcode_settings.png" alt="ARPrice - Additional Short code" title="ARPrice - Additional Short code"/></a></p>
+
+                        <h4>Height / Width :</h4>
+                        <p>You may need your Shortcodes like image, video with custom height or width so you can add height or width from this option. Blank will be auto height or width.</p>
+                        <br>
+                        <h4>Auto play :</h4>
+                        <p>For Audio/Video you can enable Autoplay when a template is loaded.</p>
+                        <br>
+                        <h4>Open in Light-box :</h4>
+                        <p>For Image/Video option Open in Lightbox is available to open media in separate Lightbox modal on click Shortcode media in the header.</p>
+                        <br>
+                        <h4>Loop :</h4>
+                        <p>HTML5 Video and HTML5 Audio have a facility to play continuously starting again every time it is finished.</p>
+
+                        <br>
+                        <p>Now, let's see each Shortcode available in ARPrice which is grouped into Image, Video, Audio and Other.</p>
+                        <ul class="bottom_margin large_bottom_margin">
+                            <li>
+                                <strong>Image</strong>
+                                <p>Here you will have the following options to get image Shortcode to be added in additional Shortcode.</p>
+                                <ul>
+                                    <li>Image URL : <p>Here you need to select or upload images for your Shortcode section in the column.</p></li>
+                                    <li>Height</li>
+                                    <li>Width</li>
+                                    <li>Open in Lightbox</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Video</strong>
+                                <p>You need to add <strong>Video id</strong> for each of the following video Shortcodes. ( html5 Video has different options described there ). Another option is available here of <strong>Auto play</strong> and <strong>Open in Light-box</strong>.</p>
+                                <ul>
+                                    <li>Youtube video</li>
+                                    <li>Vimeo Video</li>
+                                    <li>html5 Video : <p>This will allow you to add different four types of video as following, and enable <strong>Loop</strong>.</p>
+                                        <ul>
+                                            <li>MP4 source</li>
+                                            <li>Webm source</li>
+                                            <li>Ogg source</li>
+                                            <li>Poster image source</li>
+                                        </ul>
+                                    </li>
+                                    <li>Dailymotion Video</li>
+                                    <li>Metacafe Video</li>
+                                </ul>
+
+                            </li>
+                            <li>
+                                <strong>Audio</strong>
+                                <p>For audio Shortcodes, you will be asked to add <strong>Track id / Track URL</strong> for each of the following audio Shortcodes. ( html5 Audio has different options described there ). Another option is available here of <strong>Height</strong> and <strong>Autoplay</strong>.</p>
+                                <ul>
+                                    <li>html5 Audio : <p>This will allow adding different three types of audio as following and enable <strong>Loop</strong>.</p>
+                                        <ul>
+                                            <li>MP3 source</li>
+                                            <li>Ogg source</li>
+                                            <li>Wav source</li>
+                                        </ul>
+                                    </li>
+                                    <li>Soundcloud Audio</li>
+                                    <li>Mixcloud Audio</li>
+                                    <li>Beatport Audio</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Other</strong>
+                                <p>Here you can find all other types of media, ARPrice provides following other media.</p>
+                                <ul>
+                                    <li>Google Map : <p>Google map requires following options described in detail,</p>
+                                        <ul>
+                                            <li>Address : <p>Enter a proper address to initialize the center of the map.</p></li>
+                                            <li>Height</li>
+                                            <li>Zoom level : <p>Enter the initial zooming level of the map.</p></li>
+                                            <li>Marker image source : <p>Select a custom image to display as a marker.</p></li>
+                                            <li>Marker Title : <p>Enter the marker title here to display on the map.</p></li>
+                                            <li>Map info window content : <p>Enter content here to display in an info window of the map when click on the marker.</p></li>
+                                            <li>Info window by default? : <p>If this is checked info window will open on page load in the map instead of on click marker.</p></li>
+                                        </ul>
+                                    </li>
+                                    <li>Embed Block : <p>Here you have textarea labeled as <strong>Embed</strong> where you can add your Embed code.</p></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <p>After configuring Shortcode click on <strong>Insert Shortcode</strong> button to add Short code in additional Shortcode input.</p>
+
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>If your WordPress version is greater then <strong>4.4</strong>, please make sure <strong>File URL</strong> is chosen at Link URL option while selecting WordPress media.<br>For more detail please visit <strong>Select/Upload WordPress Media</strong> section at <a class="panel" href="#desc_settings">Column Description Settings</a> page.</p>
+
+                    </div>
+                </div>
+                
+                <div id="desc_settings">
+                    <h1>Column Description Settings</h1>
+                    <div class="card">
+                        <p>ARPrice provides some templates with one more section of column description where you can add content, media and font icons. When you hover on column description of a particular column in the editor you will find <strong>Column Description Settings</strong> option visible. Click on that to an open box of the following options.</p>
+                        <hr>
+                        <p class="doc_image"><a href="assets/images/ARPrice_description_settings.png" rel="lightbox"><img src="assets/images/ARPrice_description_settings.png" alt="ARPrice - Column Description Settings" title="ARPrice - Column Description Settings"/></a></p>
+
+                        <h4>Column Description :</h4>
+                        <p>Add/change the content of the column description from here ( for each toggle step if toggle price is enabled ). Also, add media or font icons in column description from bottoms options there.</p>
+
+                        <br>
+                        <h4>Add Media :</h4>
+                        <P>On click here, you will get pop-up where you can select/upload an image and customize dimension in pixel. Click on the Add button to add your selected image into your column description.</P>
+
+                        <br>
+                        <h4>Add Font Icon :</h4>
+                        <P>On click here, you will get pop-up where you can select an icon from lots of icons listed of the following types. When you click on any icon you will be able to customize the size of the icon and add an icon into your column description.</P>
+                        <p>ARPrice provides the following icons,</p>
+                        <ul class="bottom_margin">
+                            <li>Font Awesome Icons</li>
+                            <li>Material Design Icons</li>
+                            <li>Typicons</li>
+                            <li>Ionicons</li>
+                        </ul>
+
+                        <hr>
+                        <h2>Select/Upload WordPress Media</h2><br>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>If your WordPress version is greater then <strong>4.4</strong>, please make sure <strong>File URL</strong> is chosen at Link URL option while selecting WordPress media. Following screen-shots will help you to understand better.</p>
+                        <p>The following window will be there while selecting WordPress media. The file URL will be blank if None is chosen.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_media_setting_link_URL_blank.png" rel="lightbox"><img src="assets/images/ARPrice_media_setting_link_URL_blank.png" alt="ARPrice - Media Settings" title="ARPrice - Media Settings"/></a></p>
+                        <p>You need to click on the <strong>File URL</strong> button so your Link URL input will have a media link filled and the following window will be there now.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_media_setting_file_url_insert_into_post.png" rel="lightbox"><img src="assets/images/ARPrice_media_setting_file_url_insert_into_post.png" alt="ARPrice - Media Settings" title="ARPrice - Media Settings"/></a></p>
+
+                    </div>
+                </div>
+
+                <div id="price_settings">
+                    <h1>Price Settings</h1>
+                    <div class="card">
+                        <p>To customize the pricing section of a particular column please hover on the pricing section of the column in the editor you will get <strong>Price Settings</strong> option in the left/right side which provides options described in detail below.</p>
+
+                        <hr>
+                        <h4>Price Text :</h4>
+                        <p>Here is the price text input where you can add your custom pricing content. Also, add font icons from the bottom option of <strong>Add Font Icon</strong> there.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_price_settings.png" rel="lightbox"><img src="assets/images/ARPrice_price_settings.png" alt="ARPrice - Price Settings" title="ARPrice - Price Settings"/></a></p>
+
+                        <hr>
+                        <h2>Price(Number) Spin Effect On Toggle</h2>
+                        <p>ARPrice provides facility to animate pricing values on toggle if Toggle Price is enabled and Price(Number) Spin Effect On Toggle option is checked from <a class="panel" href="#effects_options">Effects</a>.</p>
+                        <p>Please wrap your pricing number with class <code><strong>.arp_price_amount</strong></code> with a span tag to enable an animation on pricing values.</p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>Please make sure to wrap only pricing numbers. And animation will work only with numbers.</p>
+                    </div>
+                </div>
+                
+                <div id="body_settings">
+                    <h1>Body Settings</h1>
+                    <div class="card">
+                        <p>Hover on the body section of a particular column, you will get options to customize each row of that column.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_drag_drop_row.png" rel="lightbox"><img src="assets/images/ARPrice_drag_drop_row.png" alt="ARPrice - Drag and Drop Row" title="ARPrice - Drag and Drop Row"/></a></p>
+
+                        <h2>Rearrange Rows</h2>
+                        <p>If you need to change the sequence of rows in the column, ARPrice makes it easy by just <strong>Drag and Drop</strong> the row in the column.</p>
+                        <br>
+                        <h2>Add New Row</h2>
+                        <p>When you hover on the row you'll get the option Add New Row on the right side, using that you will add a new row in the column.</p>
+
+                        <hr>
+                        <p>Now to customize particular row please hover on row and get options described in detail below.</p>
+
+                        <h3>Description Settings</h3>
+                        <p>This is the option to customize the content of a particular row by using the following settings. </p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_row_settings.png" rel="lightbox"><img src="assets/images/ARPrice_row_settings.png" alt="ARPrice - Description Settings" title="ARPrice - Description Settings"/></a></p>
+
+                        <h4>Row Content Type :</h4>
+                        <p>allows adding a row-level button which can be done from here.</p>
+                        <ul class="bottom_margin">
+                            <li><strong>HTML/Text:</strong> This is default selected and adds row content as normal.</li>
+                            <li><strong>Button:</strong> This will add your row description in the button of the row.</li>
+                        </ul>
+                        <p>Button at row description will have the same CSS as in the footer button in the column. You may apply custom CSS to make it different.</p>
+
+                        <p>From ARPrice version 3.9, when you set the Row Content Type to <strong>Button</strong>, You can manage its options separately.</p>
+
+                        <h4>Row Button Height/Width Settings</h4>
+                        <p class="doc_image"><a href="assets/images/ARPrice_row_button_height_width_settings.png" rel="lightbox"><img src="assets/images/ARPrice_row_button_height_width_settings.png" alt="ARPrice - Row Button Height/Width Settings" title="ARPrice - Row Button Height/Width Settings" /></a></p>
+
+                        <h4>Row Button image & script settings</h4>
+                        <p class="doc_image"><a href="assets/images/ARPrice_row_button_image_link_settings.png" rel="lightbox"><img src="assets/images/ARPrice_row_button_image_link_settings.png" alt="ARPrice - Row Button image & scripti settings" title="ARPrice - Row Button image & scripti settings" /></a></p>
+
+
+                        <h4>Description :</h4>
+                        <p>Through this, you can change the content of a particular row and also add images or font icons in the row description from the two options and bottom of description.</p>
+
+                        <p>You can navigate to top row or bottom row and next column or previous column for same option by click on arrows given below at options box.</p>
+
+                        <hr>
+                        <h3>tool-tip Settings</h3>
+                        <p>ARPrice allows you to set tool-tip for a particular row with various styles and effects.</p>
+                        <h4>tool-tip :</h4>
+                        <p>Here you can add content to display in the tooltip for a particular row. Blank will not set tool-tip for a row. Also, add font icons in tool-tip content from the bottom option of <strong>Add Font Icons</strong> at there.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_row_tooltip_settings.png" rel="lightbox"><img src="assets/images/ARPrice_row_tooltip_settings.png" alt="ARPrice - tool-tip Settings" title="ARPrice - tool-tip Settings"/></a></p>
+
+                        <hr>
+                        <h3>CSS Properties</h3>
+                        <p>ARPrice also provides separate options to customize a particular row using custom CSS for <strong>Normal State</strong> as well as <strong>Hover State</strong> of row.</p>
+                        <p>Here at the end of the option, you can get a few examples of CSS properties that can be used by just one click. It means when you click on it, it will add in the textarea of Custom CSS. </p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_row_css_properties.png" rel="lightbox"><img src="assets/images/ARPrice_row_css_properties.png" alt="ARPrice - CSS Properties" title="ARPrice - CSS Properties"/></a></p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>Please make sure you need to add CSS properties only.</p>
+
+                        <hr>
+                        <h3>Duplicate Row </h3>
+                        <p>To add a new row with the same content and settings of a particular row, ARPrice allows cloning particular row by just click on duplicate row option. This reduces rework on the new column.</p>
+
+                        <hr>
+                        <h3>Delete Row</h3>
+                        <p>At last, you have the option to delete any particular row. As you can see in the following picture on click this option you will be asked for confirmation before delete row.</p>
+
+                        <p class="doc_image"><a href="assets/images/ARPrice_add-duplicate-delete-row.png" rel="lightbox"><img src="assets/images/ARPrice_add-duplicate-delete-row.png" alt="ARPrice - Add, Duplicate and Delete Row" title="ARPrice - Add, Duplicate and Delete Row"/></a></p>
+
+                        <hr>
+                        <h2>Content Settings</h2>
+                        <p>ARPrice provides some templates with <strong>caption column</strong>. So hover on caption column body section you will get options of <strong>Add New Row</strong> and <strong>Content Settings</strong>.</p>
+                        <p><strong>At caption column</strong> content settings you will find following options,</p>
+                        <ul class="bottom_margin">
+                            <li>Text Alignment</li>
+                            <li>Font Family</li>
+                            <li>Font Size</li>
+                        </ul>
+
+                    </div>
+                </div>
+                
+                <div id="button_settings">
+                    <h1>Footer / Button Settings</h1>
+                    <div class="card">
+                        <p>Here you can customize the footer section of your pricing table column by adding footer content in some templates as well as customizing button. Hover on footer / Button section of the column, you will get styling/settings options visible on the right/left side which are described in detail below.</p>
+
+                        <hr>
+                        <h3>Footer General Settings</h3>
+                        <p>ARPrice provides some templates having a footer section where custom content can be added before/after button. Let's see footer section options in detail, </p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_footer_settings.png" rel="lightbox"><img src="assets/images/ARPrice_footer_settings.png" alt="ARPrice - Footer Settings" title="ARPrice - Footer Settings"/></a></p>
+
+                        <br>
+                        <h4>Footer Content</h4>
+                        <p>Here is the input to add custom content to be displayed in the footer section ( for each toggle step if toggle price is enabled ).</p>
+                        <br>
+                        <h4>Content Position</h4>
+                        <p>Here is the way to display footer content at the following positions, you can see the instant change of position in the editor.</p>
+                        <ul class="bottom_margin">
+                            <li>Below Button</li>
+                            <li>Above Button</li>
+                        </ul>
+                        <p><strong>At caption column</strong> footer general settings, you will find following options to customize content,</p>
+                        <ul class="bottom_margin">
+                          <li>Text Alignment</li>
+                          <li>Font Family</li>
+                          <li>Font Size</li>
+                          <li>Font Style</li>
+                        </ul>
+                        <p>You can navigate to the next column or previous column for the same options by click on navigation arrows given below at these options box.</p>
+
+                        <hr>
+                        <h3>Button General Settings</h3>
+                        <p>You can customize button text and style for the particular column from here. When you click on this option you will get the following options,</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_button_settings.png" rel="lightbox"><img src="assets/images/ARPrice_button_settings.png" alt="ARPrice - Button Settings" title="ARPrice - Button Settings"/></a></p>
+
+                        <br>
+                        <h4>Button Content</h4>
+                        <p>Add/Change button text here and add font icons with button content from <strong>Add Font icon</strong> option at bottom of button content input.</p>
+                        <br>
+                        <h4>Button Width</h4>
+                        <p>As you can see in the picture, here is the slider at the right to change the button width of a particular column by sliding from minimum width 80px to maximum width 200px. You will see an instant change in the editor for that particular column.</p>
+                        <br>
+                        <h4>Button Height</h4>
+                        <p>As you can see in the picture, here is the slider at the right to change the button height of a particular column by just sliding from minimum height 30px to maximum height 60px. Changes will display instant in the editor.</p>
+                        
+                        <hr>
+                        <h3>Button Image Settings</h3>
+                        <p>You may want to display a custom image on the button instead of any text then this can be possible from here.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_button_image_settings.png" rel="lightbox"><img src="assets/images/ARPrice_button_image_settings.png" alt="ARPrice - Button Image Settings" title="ARPrice - Button Image Settings"/></a></p>
+
+                        <br>
+                        <h4>Button Image URL</h4>
+                        <p>Here are the options to add URL input and <strong>Add Button Image</strong> button from where you can select/upload your custom image. Once you have added your custom image, you can see <strong>Remove Image</strong> at right. If you do not need your button image anymore then click on that link to remove the image and get button text back.</p>
+
+                        <hr>
+                        <h3>Button Link/Script Settings</h3>
+                        <p>If you need to configure action on button click of a particular column. Here are the options for that as you can see in the following picture and describe in detail below.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_button_script_settings.png" rel="lightbox"><img src="assets/images/ARPrice_button_script_settings.png" alt="ARPrice - Button Script Settings" title="ARPrice - Button Script Settings"/></a></p>
+
+                        <br>
+                        <h4>Button Link</h4>
+                        <p>You can add redirection URL where you need to redirect after a click of the button. Or you may just need to jump on a specific point on the same page where the pricing table is placed then please add a hash link here.</p>
+                        <div class="example bottom_margin">
+                        <h5>For Example</h5>
+                        <pre><code><strong>#specific_div_id</strong></code></pre></div>
+
+                        <br>
+                        <h4>Embed Script ( Third Party Shortcode / Script Integration )</h4>
+                        <p>Now, ARPrice also facilitates you to add your embed script or any third party Shortcodes/scripts like "PayPal" to perform various action on button click. </p>
+                        <p>ARPrice supports following,</p>
+                        <ul>
+                            <li><a class="panel" href="#woocommerce_integration">WooCommerce</a></li>
+                            <li>s2Member</li>
+                            <li><a class="panel" href="#paypal_integration">PayPal</a></li>
+                            <li><a class="panel" href="#arforms_integration">ARForms</a></li>
+                            <li><a class="panel" href="#armember_integration">ARMember</a></li>
+                            <li><p>Any script or Shortcode that returns button, link, form, etc</p>
+                                <p><strong><em>For Example,</em></strong> <br> If you want to use Shortcode of s2Member subscription button, just pick your s2Member button Short code and add it to embed script, At front view you can see the button of s2Member if Shortcode returns button and by click on that button, it will redirect you to checkout page of s2Member.</p>
+                            </li>
+                        </ul>
+
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i> If Shortcode/script returns button then that button will be displayed only if the <strong><em>Hide Default Button</em></strong> option is checked.</p>
+
+                        <br>
+                        <h4>Hide Default Button</h4>
+                        <p>As said above this option helps you to hide the ARPrice default button and display button returned from third party Shortcode/script in embed script. Or you may just hide the button if you do not need a button any more at a particular column.</p>
+
+                        <br>
+                        <h4>Open in New Tab or New Window?</h4>
+                        <p>If you are going to redirect to a particular URL on button click then you can also check <em>Open in New Tab?</em> or <em>Open in New Window?</em> to open the URL in a new tab or new window.</p>
+
+                        <br>
+                        <h4>Add Nofollow Link</h4>
+                        <p>ARPrice provides an option to add your button as a Nofollow link to say search engines not to follow this link. There will be the same styling and settings applied to the Nofollow link.</p>
+
+                    </div>
+                </div>
+                
+                
+                <div id="paypal_integration">
+                    <h1>PayPal Integration</h1>
+                    <div class="card">
+                        <p>ARPrice also supports PayPal. Add <strong><code>Buy Now</code></strong> button code to button embed script and accept payment through PayPal.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_paypal_supports.png" rel="lightbox"><img src="assets/images/ARPrice_paypal_supports.png" alt="ARPrice - PayPal Integration" title="ARPrice - PayPal Integration"/></a></p>
+                    </div>
+                </div>  
+                
+                <div id="woocommerce_integration">
+                    <h1>WooCommerce Integration</h1>
+                    <div class="card">
+                        <p>WooCommerce integration with ARPrice is quite easy and with that ARPrice pricing table will work like a WooCommerce Product</p>
+
+                        <p>To integrate WooCommerce with ARPrice pricing table, just follow below steps</p>
+
+                        <ul class="large_bottom_margin bottom_margin">
+                            <li>First, you should have the product in your WooCommerce product section</li>
+                            <li>Create a pricing table plans with the details of the product</li>
+                            <li>Click on the button link option and add WooCommerce <code>Add to Cart</code> shortcode in the embed script.</li>
+                            <li>Save the form and publish the shortcode in the front end</li>
+                            <li>Now when you click on the pricing table button, the product will automatically add in the WooCommerce cart</li>
+                            <li>You can also display WooCommerce add to cart button instead of Pricing Table Button by enabling the 'Hide default button' option from button link options of ARPrice.</li>
+                        </ul>
+
+
+                        <p class="doc_image"><a href="assets/images/ARPrice_wooCommerce_Supports.png" rel="lightbox"><img src="assets/images/ARPrice_wooCommerce_Supports.png" alt="ARPrice - WooCommerce Integration" title="ARPrice - WooCommerce Integration"/></a></p>
+                    </div>
+                </div>                
+                
+                <div id="arforms_integration">
+                    <h1>ARForms Integration</h1>
+                    <div class="card">
+                        <p>You can add Shortcode of ARForms pop-up in button embed script to open form in the pop-up.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_ARForms_Supports.png" rel="lightbox"><img src="assets/images/ARPrice_ARForms_Supports.png" alt="ARPrice - ARForms Integration" title="ARPrice - ARForms Integration"/></a></p>
+                    </div>
+                </div>   
+                <div id="armember_integration">
+                    <h1>ARMember Integration</h1>
+                    <div class="card">
+                        <p>You can add Shortcode of ARMember "Plan+SignUp" OR only "SignUp" Forms pop-up in button embed script to open a form in the pop-up.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_ARMember_Support.png" rel="lightbox"><img src="assets/images/ARPrice_ARMember_Support.png" alt="ARPrice - ARMember Integration" title="ARPrice - ARMember Integration" style="max-width: 612px;" /></a></p>
+
+                        <p class="doc_image"><a href="assets/images/ARPrice_ARMember_signup_form.png" rel="lightbox"><img src="assets/images/ARPrice_ARMember_signup_form.png" alt="ARPrice - ARMember Integration" title="ARPrice - ARMember Integration" style="max-width: 612px;" /></a></p>
+
+                        <p class="doc_image"><a href="assets/images/ARPrice_ARMember_signup.png" rel="lightbox"><img src="assets/images/ARPrice_ARMember_signup.png" alt="ARPrice - ARMember Integration" title="ARPrice - ARMember Integration" style="max-width: 612px;" /></a></p>
+                    </div>
+                </div>
+
+                <div id="chargebee_integration">
+                    <h1>Chargebee Integration</h1>
+                    <div class="card">
+                      <p>ARPrice supports Chargebee Integration. You need to follow the below steps to integrate Chargebee with ARPrice.</p>
+                      <ol>
+                        <li> You'll have a script tag received from the Chargebee account which you need to place in the header section of your website. To do so, you can use the following methods.</li>
+                          <h4>Using theme header file (Recommended)</h4>
+                          <ul>
+                            <li>You can add the script tag in your theme <code>header.php</code> file.</li>
+                            <li>You can modify the <code>header.php</code> using the WordPress theme editor or you can use any editor plugin to modify the file.</li>
+                            <li>The script tag will look like this: <code>&lt;script&nbsp;src="https://js.chargebee.com/v2/chargebee.js" data-cb-site="<b>your site name</b>"&gt;&lt;/script&gt;</code></li>
+                            <li>Add the above script tag before <code>&lt;/head&gt;</code>.</li>
+                            <li>Save the file and that's it.</li>
+                            <li><b>Note:</b> If you update the theme, then you need to follow the above steps again as updating the theme will remove the code.</li>
+                          </ul>
+                          <h4>Using third party plugin</h4>
+                          <ul>
+                            <li>You can use any third-party plugin which gives the facility to add a script into the header</li>
+                            <li>If you want to use this method, we suggest (but not recommended as third party plugins are not a part of ARPrice and may cause conflict so please use the plugin which works on your website) <a href="https://wordpress.org/plugins/insert-headers-and-footers/" target="_blank" rel="noopener noreferrer">Insert Headers and Footers</a> plugin.</li>
+                            <li>Go to <code>Dashboard > Settings > Insert Headers and Footers</code> page</li>
+                            <li>Insert <code>&lt;script src="https://js.chargebee.com/v2/chargebee.js" data-cb-site="your site name"&gt;&lt;/script&gt;</code> code in the <b>Scripts in Header</b> section and save the settings.</li>
+                          </ul>
+                        <li>Now, you'll need to add the button in the ARPrice. Please follow the below steps for that.</li>
+                          <ul>
+                            <li>Open the pricing table in the editor</li>
+                            <li>Open the pricing table button link settings</li>
+                            <li>Add your button code with an extra class attribute to match the Chargebee button design with the pricing table. Add <code>&lt;a href="javascript:void(0)" data-cb-type="checkout" class="bestPlanButton" data-cb-plan-id="Chargebee Plan Id"&gt;Your Button Text&lt;/a&gt;</code> in the <b>embed script</b> and enable <b>Hide default button</b> option.</li>
+                            <p class="doc_image"><a href="assets/images/ARPrice_chargebee_integration.png" rel="lightbox"><img src="assets/images/ARPrice_chargebee_integration.png" alt="ARPrice - Chargebee Integration" title="ARPrice - Chargebee Integration"/></a></p>
+                            <li>Save the pricing table and that's it.</li>
+                          </ul>
+                      </ol>
+                    </div>
+                </div>
+
+                <div id="gutenberg_support">
+                    <h1>Gutenberg Support</h1>
+                    <div class="card">
+                        <p>If your WordPress version is 5.0 or higher and using WordPress Gutenberg page editor then you have ARPrice block to add easily in page from Common Blocks. When you add ARPrice block you will get dropdown with all your saved pricing tables list. Select one of them and save your page.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_gutenberg_block.png" rel="lightbox"><img src="assets/images/ARPrice_gutenberg_block.png" alt="ARPrice - WordPress Gutenberg" title="ARPrice - WordPress Gutenberg"/></a></p>
+                    </div>
+                </div>
+
+                <div id="cornerstone_support">
+                    <h1>Cornerstone Support</h1>
+                    <div class="card">
+                      <p>ARPrice exclusively adds Element in <strong>Cornerstone Page Builder</strong>, which facilitates to add a template in a page just like an element.</p>
+                      <p class="doc_image"><a href="assets/images/ARPrice_cornerstone_element.png" rel="lightbox"><img src="assets/images/ARPrice_cornerstone_element.png" alt="ARPrice - Cornerstone Support" title="ARPrice - Cornerstone Support"/></a></p>
+                      <p>ARPrice element will let you select your saved ARPrice templates from the dropdown as you can see in the following screenshot.</p>
+                      <p class="doc_image"><a href="assets/images/ARPrice_cornerstone.png" rel="lightbox"><img src="assets/images/ARPrice_cornerstone.png" alt="ARPrice - Cornerstone Support" title="ARPrice - Cornerstone Support"/></a></p>
+                      <p>Let's see each step to add ARPrice table using Cornerstone Page Builder :</p>
+                        <ol class="large_bottom_margin bottom_margin">
+                            <li>You need to add an element of ARPrice in any row/column of a page.</li>
+                            <li>Then clicking on the element icon placed in a page you will get a list of options of ARPrice in the sidebar.</li>
+                            <li>The List of Arguments listed under ARPrice allows you to select your customized/saved ARPrice templates to add on a page.</li>
+                            <li>After selection of template you just need to save and all done.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div id="wpbakery_support">
+                    <h1>WPBakery VC Support</h1>
+                    <div class="card">
+                        <p>ARPrice exclusively adds Element in WPBakery VC Page Builder, which facilitates to add template in a page just like an element.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_vc_add_element.png" rel="lightbox"><img src="assets/images/ARPrice_vc_add_element.png" alt="ARPrice Visual Composer Support" title="ARPrice Visual Composer Support"></a></p>
+                        <p>With WPBakery Visual Composer page that can be built using Classic Mode or Frontend Editor, ARPrice has a common method in both to add a template on your page.</p>
+                        <p>Let's see each step to add ARPrice table using Visual Composer :</p>
+                        <ol class="large_bottom_margin bottom_margin">
+                            <li>Select Classic or Frontend Editor with which you want to build a page.</li>
+                            <li>After that click on <code>Add Element</code> and you will see a popup with numerous elements, you need to click on ARPrice element.</li>
+                            <li>You will get a popup window as shown below, to select your customized/saved templates in ARPrice to display on a page.</li>
+                        </ol>
+                        <p class="doc_image">
+                            <a href="assets/images/ARPrice_vc_settings.png" rel="lightbox"><img src="assets/images/ARPrice_vc_settings.png" alt="ARPrice Visual Composer Support" title="ARPrice Visual Composer Support"></a>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="elementor_support">
+                    <h1>Elementor Support</h1>
+                    <div class="card">
+                      <p>ARPrice exclusively add Element in <strong>Elementor Page Builder</strong>, which facilitates to add template in a page just like an element.</p>
+                      <p class="doc_image"><a href="assets/images/ARPrice_elementor_element.png" rel="lightbox"><img src="assets/images/ARPrice_elementor_element.png" alt="ARPrice - Elementor Support" title="ARPrice - Elementor Support"/></a></p>
+                      <p>element will let you select your saved ARPrice templates from the dropdown. When you select/change the template in the dropdown you will find ARPrice table shortcode placed at the Elementor section on your page as you can see in the following screenshot.</p>
+                      <p class="doc_image"><a href="assets/images/ARPrice_elementor_shortcode.png" rel="lightbox"><img src="assets/images/ARPrice_elementor_shortcode.png" alt="ARPrice - Elementor Shortcode" title="ARPrice - Elementor Shortcode"/></a></p>
+                      <p>After the selection of your template click outside of the Elementor section, you will find ARPrice template preview there. Let's see each step to add ARPrice table using Elementor Page Builder:</p>
+                      <ol class="large_bottom_margin bottom_margin">
+                          <li>You need to drag and drop the element of ARPrice in the Elementor section of a page.</li>
+                          <li>You will have an <strong>ARPrice Shortcode</strong> block in the Elementor sidebar from where you can select/change the ARPrice template and enter the title for your template on your page.</li>
+                          <li>After selection of template you just need to save and all done.</li>
+                      </ol>
+                      <p class="doc_image"><a href="assets/images/ARPrice_elementor_preview.png" rel="lightbox"><img src="assets/images/ARPrice_elementor_preview.png" alt="ARPrice - Elementor Preview" title="ARPrice - Elementor Preview"/></a></p>
+                    </div>
+                </div>
+
+                <div id="king_composer_support">
+                  <h1>King Composer Support</h1>
+                  <div class="card">
+                    <p>ARPrice exclusively adds an element in <strong>King Composer Page Builder</strong>, which facilitates to add a template in a page just like an element.</p>
+                    <p class="doc_image"><a href="assets/images/ARPrice_kc_element.png" rel="lightbox"><img src="assets/images/ARPrice_kc_element.png" alt="ARPrice - King Composer Support" title="ARPrice - King Composer Support" /></a></p>
+                    <p>ARPrice element will let you select your saved templates from the dropdown. When you select/change the template in the dropdown you will find ARPrice table shortcode placed at King Composer Row on your page as you can see in the following screenshot.</p>
+                    <p class="doc_image"><a href="assets/images/ARPrice_kc_element_shortcode.png" rel="lightbox"><img src="assets/images/ARPrice_kc_element_shortcode.png" alt="ARPrice - King Composer Shortcode" title="ARPrice - King Composer Shortcode" /></a></p>
+                    <p>After selection press ESC or close icon to close the popup of pricing table selection. You will find the ARPrice template preview there. Let's see each step to add ARPrice table using King Composer Page Builder:</p>
+                    <ol class="large_bottom_margin bottom_margin">
+                      <li>You need to add a Row in page</li>
+                      <li> You will have <strong>ARPrice shortcode</strong> block in King Composer popup from where you can select/change ARPrice template and enter a title for your template in your page</li>
+                      <li>After the selection of a template, you just need to save and all done.</li>
+                    </ol>
+                    <p class="doc_image"><a href="assets/images/ARPrice_kc_preview.png" rel="lightbox"><img src="assets/images/ARPrice_kc_preview.png" alt="ARPrice - King Composer Preview" title="ARPrice - King Composer Preview"/></a></p>
+                  </div>
+                </div>
+
+                <div id="beaver_builder_support">
+                  <h1>Beaver Builder Support</h1>
+                  <div class="card">
+                    <p>ARPrice exclusively add element in <strong>Beaver Builder Page Builder</strong>, which facilitates to add template in a page just likke an element.</p>
+                    <p class="doc_image"><a href="assets/images/ARPrice_bb_element.png" rel="lightbox"><img src="assets/images/ARPrice_bb_element.png" alt="ARPrice - Beaver Builder Support" title="ARPrice - Beaver Builder Support" /></a></p>
+                    <p>ARPrice element will let you select your saved templates from the dropdown. When you select/change the template from the dropdown and click on the save button, you'll find the ARPrice placed at Beaver Builder Row on your page as you can see in the following screenshot.</p>
+                    <p class="doc_image"><a href="assets/images/ARPrice_bb_row.png" rel="lightbox"><img src="assets/images/ARPrice_bb_row.png" alt="ARPrice - Beaver Builder Row" title="ARPrice - Beaver Builder Row" /></a></p>
+                    <p> After saving the pricing table, publish/update the page, you need to refresh the page once to completely load the ARPrice pricing table. </p>
+                    <p class="doc_image"><a href="assets/images/ARPrice_bb_preview.png" rel="lightbox"><img src="assets/images/ARPrice_bb_preview.png" alt="ARPrice - Beaver Builder Preview" title="ARPrice - Beaver Builder Preview" /></a></p>
+                  </div>
+                </div>
+
+                <div id="template_preview">
+                    <h1>Pricing Table Preview</h1>
+                    <div class="card">
+                        <p>ARPrice provides a real-time preview of the pricing table. It also provides facility to view template in a responsive layout. After making necessary changes, you will able to view your template preview either of 3 ways:</p>
+                        <ul class="large_bottom_margin bottom_margin">
+                            <li>As you have seen at <a class="panel" href="#edit_clone_template">Template Selection</a> section you will able to preview originally provided template from the list of templates</li>
+                            <li>Also, you can preview your saved template from the list of templates you have saved.</li>
+                            <li>At ARPrice template editor top right corner you will find a <strong>Preview Button</strong> which gives you an instant preview. There is no need to save your changes before looking at Preview.</li>
+                        </ul>
+                        <p class="doc_image"><a href="assets/images/ARPrice_preview.png" rel="lightbox"><img src="assets/images/ARPrice_preview.png" alt="ARPrice - Desktop Preview" title="ARPrice - Desktop Preview"/></a></p>
+
+                        <p>As you can see in the picture ARPrice provides facility to preview a in responsive layout. So, you have three layout button at top left corner on preview modal which are following,</p>
+
+                        <ul class="bottom_margin large_bottom_margin">
+                            <li>
+                                <strong>Desktop View:</strong><p> Here you can get look of your template in desktop view.</p>
+                            </li>
+                            <li>
+                                <strong>Tablet View:</strong><p> Here you can see how your template will look in tablet view.</p>
+                            </li>
+                            <li>
+                                <strong>Mobile View:</strong><p> Same way here you can see how your template will look in the mobile view.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="publish_pricing_table">
+                    <h1>Publish Your Pricing Table</h1>
+                    <div class="card">
+                        <p>Let's see different ways to publish your pricing table of ARPrice in this section. There are two basic ways which as described in the following.</p>
+
+                        <hr>
+                        <h2>WordPress Pages/Posts</h2><br>
+                        <p>ARPrice facilitates you to display a pricing table into your WordPress page or post by just placing Shortcode there. You can get the ARPrice Shortcode from the pricing table editor as well as from listing of all your pricing tables.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_shortcode.png" rel="lightbox"><img src="assets/images/ARPrice_shortcode.png" alt="ARPrice - Short code" title="ARPrice - Short code"/></a></p>
+                        <p>ARPrice also supports the <strong>Gutenberg</strong> page editor. Please get more detail at <a class="panel" href="#gutenberg_support">Gutenberg Support</a>.</p>
+
+                        <hr>
+                        <h2>Widgets</h2><br>
+                        <p>ARPrice also adds the widget to display your pricing table in the sidebar or other custom sections in your site. Please go to <code>Appearance -&gt; Widgets</code> you will have <strong>ARPrice</strong> widget available. You just need to drag and drop into your sidebar or other custom section and select your pricing table from the dropdown.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_Widget.png" rel="lightbox"><img src="assets/images/ARPrice_Widget.png" alt="ARPrice - Widget" title="ARPrice - Widget"/></a></p>
+
+                    </div>
+                </div>
+                
+                <div id="import_export_templates">
+                    <h1>Import/Export Templates</h1>
+                    <div class="card">
+                        <p>ARPrice has a separate page where you can export inbuilt templates as well as your customized pricing tables and import your previously exported templates.</p>
+                        <hr>
+                        <h2>Export Pricing Tables</h2>
+                        <p>Here is the list of all inbuilt templates as well as your customized templates. Inbuilt pricing table will have a prefix like <strong>Table::</strong> and your customized pricing tables will have a prefix like <strong>Template::</strong>. Each one will have its unique id in brackets.</p>
+                        <p>Select one or more templates here and click on the Export button. You will get all your selected templates exported in the text file which can be used to import them again.</p>
+
+                        <p class="doc_image"><a href="assets/images/ARPrice_export_templates.png" rel="lightbox"><img src="assets/images/ARPrice_export_templates.png" alt="ARPrice - Export Templates" title="ARPrice - Export Templates"/></a></p>
+
+                        <hr>
+                        <h2>Import Pricing Tables</h2>
+                        <p>Here you can import your previously exported templates. Please Upload text file exported from ARPrice and click on the Import button. Your templates will be imported in just a few seconds.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_import_templates.png" rel="lightbox"><img src="assets/images/ARPrice_import_templates.png" alt="ARPrice - Import Templates" title="ARPrice - Import Templates"/></a></p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i> You can import only text file exported previously from ARPrice only.</p>
+                    </div>
+                </div>
+                
+                <div id="import_from_arprice_lite">
+                  <h1>Import ARPrice lite version templates</h1>
+                  <div class="card">
+                    <p>ARPrice 3.2 will provide the facility to import the templates from the lite version of ARPrice.</p>
+                    <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i>To use this feature you should have installed and active ARPrice Lite 2.0 or higher.</p>
+                    <p>If you meet the above requirement then you'll find a section in ARPrice Import/Export page. Where your ARPrice lite version templates are listed.</p>
+                    <p class="doc_image"><a href="assets/images/ARPrice_import_lite_templates.png" rel="lightbox"><img src="assets/images/ARPrice_import_lite_templates.png" alt="ARPrice - Import Lite version Templates" title="ARPrice - Import Lite version Templates"/></a></p>
+                    <p> You just need to click on the import button and the ARPrice lite table will be imported in the ARPrice Pro version and you'll be redirected to the editor with the imported table.</p>
+                    <p> Also, you can import ARPrice lite template to ARPrice pro version from one domain to another domain with a little bit of tweaking. Just follow the below steps</p>
+                    <ul class="large_bottom_margin">
+                      <li>Export the ARPrice lite template from your old domain</li>
+                      <li>Install ARPrice lite 2.0 or higher on your new domain</li>
+                      <li>First, Import the template in the ARPrice lite on your new domain</li>
+                      <li>Now go to Import Export page in the pro version of ARPrice and import the lite templates from there</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div id="global_settings">
+                    <h1>Global Settings</h1>
+                    <div class="card">
+                        <p>All other general settings common for all templates can be found here. Let's see each in detail. </p>
+
+                        <hr>
+                        <h3>Global Custom CSS</h3>
+                        <p>Here you are able to add <strong>Custom CSS</strong> which can be applied globally in your site. </p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_global_custom_css.png" rel="lightbox"><img src="assets/images/ARPrice_global_custom_css.png" alt="ARPrice - Global Custom Css" title="ARPrice - Global Custom Css"/></a></p>
+                        <p>Here you need to add your custom CSS with your element class or id as in following example.</p>
+                        <div class="example bottom_margin">
+                            <h5>For Example</h5>
+                            <pre><code>.element_class{ color : #990000; }</code></pre>
+                        </div>
+
+                        <hr>
+                        <h3>Responsive Settings</h3>
+                        <p>Here you are able to set the maximum width of the screen in pixels to decide view of templates globally for mobile view, tablet view, and desktop view.</p>
+                        <p><strong>For Example</strong><br>If you have set 520px in Mobile View, your pricing table columns will be displayed as a single column structure up to 520px width of the screen. </p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_global_responsive_settings.png" rel="lightbox"><img src="assets/images/ARPrice_global_responsive_settings.png" alt="ARPrice - Responsive Settings" title="ARPrice - Responsive Settings"/></a></p>
+                        
+                        <hr>
+                        <h3>Add Character Sets</h3>
+                        <p>ARPrice provides the facility to add <code>character sets</code> with <code>google fonts</code> according to your requirements. Here you will have the number of options to choose the character sets which you want to add with google fonts. </p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_global_character_set.png" rel="lightbox"><img src="assets/images/ARPrice_global_character_set.png" alt="ARPrice -  Add Character Set" title="ARPrice -  Add Character Set"/></a></p>
+
+                        <br>
+                        <h3>Google Map Setting</h3>
+                        <p>ARPrice provides the facility to add Google Maps at an additional Shortcode section in some media supporting templates. So to add Google Map in ARPrice please enter Google Map API key here.</p>
+                        <br>
+                        <!-- //////////////////////////////////////// -->
+                        <h3>A/B Testing</h3>
+						<p>A/B testing (also known as split testing or bucket testing) is a method of comparing two versions of a webpage or app against each other to determine which one performs better. AB testing is essentially an experiment where two or more variants of a page are shown to users at random, and statistical analysis is used to determine which variation performs better for a given conversion goal.</p>
+                        <p>ARPrice provides the A/B testing facility to display more than one pricing table using just single Shortcode. When you enable this option you'll get an extra menu under the ARPrice menu in the admin menu list,<a href="#ab_testing" class="panel"> click here</a> for more details.</p>
+                        
+                        <hr>
+                        <h3>Enable or Disable font icons</h3>
+                        <p>ARPrice provides Font-awesome Icons, Material Design Icons, Ionicons, and Typicons. If you are facing any loading performance issue in your site because of font icons libraries then you can disable one or more font icons from here.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_global_analytics.png" rel="lightbox"><img src="assets/images/ARPrice_global_analytics.png" alt="ARPrice -  Enable Analytics" title="ARPrice -  Enable Analytics"/></a></p>
+                        <br>
+                        <h3>Track button click of pricing table</h3>
+                        <p>ARPrice tracks button/column clicks of your pricing table. If you do not want to get analytics of clicked button/column than switch off here.</p>
+
+                        <hr>
+                        <h3>Display loader upon submission</h3>
+                        <p>Enable this option from here to display loader on pricing template wrapper each time when your pricing table column/button is clicked at the front.</p>
+                        <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i> Please note that you need to <strong>enable analytics</strong> to make this facility working at the front.</p>
+                        <p class="doc_image"><a href="assets/images/ARPrice_global_load_js_css.png" rel="lightbox"><img src="assets/images/ARPrice_global_load_js_css.png" alt="ARPrice - Load JS-CSS" title="ARPrice - Load JS-CSS"/></a></p>
+                        <br>
+                        <h3>Load JS & CSS in all pages</h3>
+                        <p>Enable this option only if you have any js/CSS loading issue in your theme. ARPrice will load CSS and js files at all pages where even ARPrice Shortcode not exist.</p>
+
+                    </div>
+                </div>
+                
+                <div id="ab_testing">
+                  <h1>A/B Testing</h1>
+                  <div class="card">
+                      
+					  <p>A/B testing (also known as split testing or bucket testing) is a method of comparing two versions of a webpage or app against each other to determine which one performs better. AB testing is essentially an experiment where two or more variants of a page are shown to users at random, and statistical analysis is used to determine which variation performs better for a given conversion goal.</p>
+
+					  <p>ARPrice provides the A/B testing facility to display more than one pricing table using just single Shortcode. You need to add shortcode : [ARPriceABTest] in frontend after configuring pricing table priority from admin panel.</p>
+                      
+                      <p class="doc_image"><a href="assets/images/ARPrice_ab_testing.png" rel="lightbox"><img src="assets/images/ARPrice_ab_testing.png" alt="ARPrice - A/B Testing" title="ARPrice - A/B Testing"/></a></p>
+                      <p>You can see A/B testing options in the above screenshot, you need to select any table as a <strong>Primary table</strong> and then <strong>variation tables</strong> as many as you want. In variation tables, you can set more than one table and priority of the table using a percentage(impression) value. After configuring values, click the button <strong>Save</strong>.</p>
+                      <p class="alert alert_info"><i class="ts_icon ts_icon_info_circle"></i><strong>Note:</strong> After each time saving the A/B testing settings, A/B testing's analytics will be reset. </p>
+
+                      <p>Here an impression of Primary table will be 100 - total impression of variation tables</p>
+                      <p>For Example: <br> variation table1 = 20% <br> variation table2 = 30% <br>The impression of Primary table will be 50%</p>
+                      <p>Higher the percentage of table, it will display more times in frontend.</p>
+                      <p class="doc_image"><a href="assets/images/ARPrice_ab_testing_analytics.png" rel="lightbox"><img src="assets/images/ARPrice_ab_testing_analytics.png" alt="ARPrice - A/B Testing Analytics" title="ARPrice - A/B Testing Analytics"/></a></p>
+                      <h4>A/B Testing Analytics</h4>
+                      <p>Analyze the A/B testing, Here you get the views and clicks detail of tables set in A/B testing. And you can reset analytics by click the <strong>Reset Analytics</strong> Button.</p>
+                  </div>
+                </div>
+                
+                <div id="sources_credits">
+                    <h1>Sources & Credits</h1>
+                    <div class="card">
+                        <ol class="large_bottom_margin">
+                            <li><a href="https://fortawesome.github.io/Font-Awesome/icons/" target="_blank">Font Awesome Icons</a></li>
+                            <li><a href="https://www.google.com/design/icons/" target="_blank">Material Design Icons</a></li>
+                            <li><a href="http://www.typicons.com/" target="_blank">Typicons</a></li>
+                            <li><a href="http://ionicons.com/" target="_blank">Ionicons</a></li>
+                            <li><a href="https://maps.google.co.in/" target="_blank">Google Map</a></li>
+                            <li><a href="https://www.youtube.com/" target="_blank">Youtube Video API</a></li>
+                            <li><a href="https://vimeo.com/" target="_blank">Vimeo Video API</a></li>
+                            <li><a href="https://www.screenr.com/" target="_blank">Screenr Video API</a></li>
+                            <li><a href="https://www.dailymotion.com/" target="_blank">Dailymotion Video API</a></li>
+                            <li><a href="https://www.metacafe.com/" target="_blank">Metacafe Video API</a></li>
+                            <li><a href="https://soundcloud.com/" target="_blank">Soundcloud Audio API</a></li>
+                            <li><a href="https://www.mixcloud.com/" target="_blank">Mixcloud Audio API</a></li>
+                            <li><a href="https://www.beatport.com/" target="_blank">Beatport Audio API</a></li>
+                            <li><a href="https://bootstraptour.com/" target="_blank">Bootstrapo Tour Guide</a></li>
+                            <li><a href="http://tipso.object505.com/" target="_blank">Tipso</a></li>       
+                            <li><a href="https://sortablejs.github.io/Sortable/" target="_blank">SortableJS</a></li>
+                        </ol>
+                    </div>                
+                </div>
+                
+                <div id="changelog">
+                    <h1>Change-log</h1>
+                    <div class="card">
+                        <h2>Version 3.9 (17 July, 2021)</h2>
+                        <ul>
+                            <li>Added facility to manage row level button's options separately.</li>
+                            <li>Added facility to upload button images for toggle button steps.</li>
+                            <li>Added support of Thrive Builder Tabs</li>
+                            <li>Improved pricing table editor to manage WordPress user session.</li>
+                            <li>Other minor bug fixes</li>
+                        </ul>
+                        <h2>Version 3.8.1 (09 Dec, 2020)</h2>
+                        <ul>
+                            <li>Added compatibility for PHP 8</li>
+							<li>Added compatibility for WordPress 5.6</li>
+                            <li>Minor bug fixes</li>
+                        </ul>
+                        <h2>Version 3.8 (20 Nov, 2020)</h2>
+                        <ul>
+							<li>Added new toggle effects on toggle price option.</li>
+                            <li>Added new option to set visible columns for rotation effect in tablet view.</li>
+                            <li>Added new option to set minimum row height.</li>
+                            <li>Added new font awesome icons.</li>
+                            <li>Updated ionicons font icons.</li>
+                            <li>Other minor bug fixes.</li>
+                        </ul>
+                        <h2>Version 3.7.1 (26 Aug, 2020)</h2>
+                        <ul>
+                            <li>Minor bug fixes</li>
+                        </ul>
+                        <h2>Version 3.7 (05 Aug, 2020)</h2>
+                        <ul>
+                            <li>Added facility to inherit font from the theme</li>
+                            <li>Minor bug fixes</li>
+                        </ul>
+                        <h2>Version 3.6.1 (03 July, 2020)</h2>
+                        <ul>
+                            <li>Minor bug fixes</li>
+                        </ul>
+                        <h2>Version 3.6 (19 June, 2020)</h2>
+                        <ul>
+                            <li>Added facility to set toggle steps upto 8 levels.</li>
+                            <li>Added Price format with comma(,) as a decimal separator for price animation.</li>
+                            <li>Added support of Elementor Tabs.</li>
+                            <li>Fixed conflict with 'Loom for Chrome' extension.</li>
+                            <li>Other minor bug fixes.</li>
+                        </ul>
+                        <h2>Version 3.5 (12 March, 2020)</h2>
+                        <ul>
+                            <li>Added new feature: A/B testing. Which is used to boost your landing page conversion rate.</li>
+                            <li>Added new font awesome icons and other icon sets</li>
+                            <li>Added CSS style editor for better user experience</li>
+                            <li>Big improvement in performance of pricing table editor.  Editor is now much more faster and smoother.</li>
+                            <li>Improved UI in pricing table editor</li>
+                            <li>Improved fronted loading speed</li>
+                            <li>Improved File upload security</li>
+                            <li>Other minor bug fixes</li>
+                        </ul>
+                       <h2>Version 3.2 (25 May, 2019)</h2>
+                       <ul class="bottom_margin">
+                        <li>Added module for Beaver Builder page builder</li>
+                        <li>Added facility to import pricing table(s) from lite version to Pro version</li>
+                        <li>Updated maxmind database(Geoip location)</li>
+                        <li>Fixed iPhone/iPad slider issue</li>
+                        <li>Other minor bug fixes</li>
+                       </ul>
+                       <h2>Version 3.1.1 (15 January, 2019)</h2>
+                        <ul class="bottom_margin">
+                          <li>Added module for King Composer page builder</li>
+                          <li>Other minor bug fixes</li>
+                        </ul>
+                       <h2>Version 3.1 (05 January, 2019)</h2>
+                        <ul class="bottom_margin">
+                          <li>Added module for Elementor page builder</li>
+                          <li>New 200 samples available for direct install from dashboard</li> 
+                          <li>Fixed iPhone/iPad tooltip issue</li>
+                          <li>Other minor bug fixes</li>
+                        </ul>
+                       <h2>Version 3.0 (23 November, 2018)</h2>
+                        <ul class="bottom_margin">
+                          <li>Improved User Interface.</li>
+                          <li>Improve loading performance for template editor.</li>
+                          <li>Added support of ARPrice in WordPress Gutenberg.</li>
+                          <li>Added facility to set background image for template wrapper.</li>
+                          <li>Added compatibility for RTL languages</li>
+                          <li>Added facility to import sample templates directly from the listing page.</li>
+                          <li>Added facility to migrate other template data.</li>
+                          <li>Added new styles for toggle button.</li>
+                          <li>Added mobile view styles for toggle button.</li>
+                          <li>Increased toggle steps upto 5 level.</li>
+                          <li>Added facility to hide particular column in pricing table.</li>
+                          <li>Added facility to add button in row.</li>
+                          <li>Added facility to support hash link on button click. </li>
+                          <li>Added facility to set no-follow link on button.</li>
+                          <li>Added facility to enable or disable font icons from global settings.</li>
+                          <li>Added facility to display loader upon submission.</li>
+                          <li>Added facility to verify HTML code in pricing table.</li>
+                          <li>Added facility to add Google API Key for Google Map</li>
+                          <li>Other bug fixes.</li>
+                          <li>CSS fixes.</li>
+                        </ul>
+
+                       <h2>Version 2.6.1 (26 August, 2017)</h2>
+                        <ul class="bottom_margin">
+                          <li>Improved CSS to avoid other plugin CSS conflicts.</li>
+                          <li>Other minor bug fixes.</li>
+                        </ul>
+
+                       <h2>Version 2.6 (31 July, 2017)</h2>
+                        <ul class="bottom_margin">
+                          <li>Improved caption(features) column display in mobile.</li>
+                          <li>Improved ARPrice loading performance even better.</li>
+                          <li>Added new Font Awesome icons.</li>
+                          <li>Added new Typicons icons.</li>
+                          <li>Added new Ionicons icons.</li>
+                          <li>Other minor bug fixes.</li>
+                        </ul>
+                        
+                       <h2>Version 2.5.4 (21 October, 2016)</h2>
+                        <ul class="bottom_margin">
+                          <li>Added Option in general settings to enable/disable Analytics of clicked column.</li>
+                          <li>Improved ARPrice loading performance.</li>
+                          <li>Minor CSS Fixes.</li>
+                          <li>Other bug fixes.</li>
+                        </ul>
+
+                        <h2>Version 2.5.3 (24 August, 2016)</h2>
+                        <ul class="bottom_margin">
+                          <li>Improved ARPrice loading performance.</li>
+                            <li>Resolved pop-up block issue.</li>
+                            <li>Minor CSS Fixes.</li>
+                            <li>Other bug fixes.</li>
+                        </ul>
+                        
+                        <h2>Version 2.5.2 (18 July, 2016)</h2>
+                        <ul class="bottom_margin">
+                          <li>Improved CSS for some templates.</li>
+                            <li>Improved template output in mobile view.</li>
+                            <li>Minor CSS Fixes.</li>
+                            <li>Other bug fixes.</li>
+                        </ul>
+                        
+                        <h2>Version 2.5.1 (07 June, 2016)</h2>
+                        <ul class="bottom_margin">
+                          <li>Added tool-tip on slider for button size.</li>
+                            <li>Minor CSS Fixes.</li>
+                            <li>Other bug fixes.</li>
+                        </ul>
+                         
+                        <h2>Version 2.5 (28 May, 2015)</h2>
+                        <ul class="bottom_margin">
+                          <li>Added two brand new templates for team / member showcase.</li>
+                            <li>Added Facility to set favorite color on color picker.</li>
+                            <li>Added facility to change button borders.</li>
+                            <li>Added facility to disable column/button hover effects.</li>
+                            <li>Added facility to change column borders.</li>
+                            <li>Added facility to set default toggle tab.</li>
+                            <li>Added facility to change images/videos toggle tab wise.</li>
+                            <li>Added facility to change tool-tips toggle tab wise.</li>
+                            <li>Added facility to change footer content toggle tab wise.</li>
+                            <li>Added facility to change row borders.</li>
+                            <li>Added navigation facility to easily navigate between rows and columns.</li>
+                            <li>Added facility to change alignment of header text, pricing text, column description text.</li>
+                            <li>Added facility to change background colors of normal state and hover state for every column sections.</li>
+                            <li>Added facility to change font colors of normal state and hover state for every column sections.</li>
+                            <li>Moved all the font settings to new tab "Fonts"</li>
+                            <li>Added cornerstone support.</li>
+                            <li>Added facility to hide / show column particular section.</li>
+                            <li>Added facility to set background image on every column.</li>
+                            <li>Added facility to set number animation on pricing digits in toggle tab.</li>
+                            <li>Added facility to change height and width of buttons.</li>
+                            <li>Added facility to change shapes to place images.</li>
+                            <li>Added facility to change different button styles.</li>
+                            <li>Improved ribbons</li>
+                            <li>Improved column shadow</li>
+                            <li>Improved plugin loading speed in back-end and front-end</li>
+                            <li>Other bug fixes.</li>
+                        </ul>
+                        
+                        <h2>Version 2.1.1 (30 December, 2015)</h2>
+                        <ul class="bottom_margin">
+                          <li>Added Facility to copy first tab data to other tabs for toggle switch.</li>
+                            <li>Improved Column Shadow.</li>
+                            <li>Improved Toggle Switch.</li>
+                            <li>Improved Ribbons.</li>
+                            <li>Improved CSS Class Information section to add custom css on pricing tables.</li>
+                            <li>Minor CSS Fixes.</li>
+                            <li>Other bug fixes.</li>
+                        </ul>
+                        
+                        <h2>Version 2.1 (30 November, 2015)</h2>
+                        <ul class="bottom_margin">
+                            <li>Improved Ribbons.</li>
+                    <li>Minor bug fixes and css changes.</li>
+                        </ul>
+                        
+                        <h2>Version 2.0 (18 November, 2015)</h2>
+                        <ul class="bottom_margin">
+                            <li>Added Toggle Switch Support.</li>
+                            <li>Added New unique templates.</li>
+                            <li>Brand New Admin design.</li>
+                            <li>Added Custom color facility to add unlimited colors to templates.</li>
+                            <li>Added New Material Font Icons Support.</li>
+                            <li>Unique Analytics (Statistics) for all tables for table visits and clicks. </li>
+                            <li>Added Typicons Font Icons Support.</li>
+                            <li>Added Ionicons Font Icons Support.</li>
+                            <li>Included New Font Awesome Icons.</li>
+                            <li>Added Facility to open videos in Light-box.</li>
+                            <li>Added Facility to upload custom image on ribbon.</li>
+                            <li>Added Facility to make entire column click-able.</li>
+                            <li>Added new tool-tip options.</li>
+                            <li>Added new column hover effects.</li>
+                            <li>Added new column shadow effects.</li>
+                            <li>Added facility to hide footer.</li>
+                            <li>Added Latin Extended Support for Google Fonts.</li>
+                            <li>Added Facility to apply border radius on columns.</li>
+                            <li>Added new color schemes to existing templates.</li>
+                            <li>Other minor bug fixes and css changes.</li>
+                        </ul>
+                        
+                        <h2>Version 1.1 (25 February, 2015)</h2>
+                        <ul class="bottom_margin">
+                            <li>Added Woo-Commerce Support.</li>
+                            <li>Added ARForms Support.</li>
+                            <li>Added S2member Support.</li>
+                            <li>Added Facility to hide default button of pricing table while adding custom script.</li>
+                            <li>Added CSS Class information for advanced users.</li>
+                            <li>Improved Ribbons Quality.</li>
+                            <li>Included New Font Awesome Icons.</li>
+                            <li>Other minor bug fixes and css changes.</li>
+                        </ul>
+                        
+                        <h2>Version 1.0.1 (17 January, 2015)</h2>
+                        <ul class="bottom_margin">
+                            <li>Added VISUAL COMPOSER Support.</li>
+                            <li>Small bug fixes and text changes.</li>
+                        </ul>
+
+                        <hr>
+                        <p> If you require any assistance with using this plugin or would like personal customization, you can email me at <a href="mailto:info@reputeinfosystems.com">info@reputeinfosystems.com</a> Or from the <a target="_blank" href="http://codecanyon.net/user/reputeinfosystems">profile on CodeCanyon.</a></p>
+                        <p>Please follow us on,</p>
+                        <ul style="list-style: none;">
+                            <li><i class="ts_icon ts_icon_facebook clear_blue small_right_margin"></i><a  title="RepunteInfosystems Facebook" href="http://facebook.com/reputeinfosystems/" target="_blank">Facebook</a></li>
+                            <li><i class="ts_icon ts_icon_twitter clear_blue small_right_margin"></i><a title="RepunteInfosystems Twitter" href="https://twitter.com/reputeinfosys" target="_blank">Twitter</a></li>
+                        </ul>
+                        
+                        <hr>
+                        <p><strong>Thanks,</strong><br />
+                          <strong>ReputeInfosystems</strong></p>
+                    </div>                
+                </div>
+            </div>       
+        </div>
+        <div id="overlay"></div>
+        <a href="#" class="back-to-top"><i class="ts_icon ts_icon_arrow_large_up clear_white float_left small_right_margin"></i></a>
+        <script language="javascript" src="js/lightbox.min.js"></script>
+    </div>
+    
+</body>
+</html>

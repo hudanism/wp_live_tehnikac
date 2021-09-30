@@ -1,14 +1,14 @@
-[21/Sep/2021:06:46:55] (I): WordPress Instance Info:
-[21/Sep/2021:06:46:55] (I): Home URL : http://localhost:81/wp_live_tehnikac
-[21/Sep/2021:06:46:55] (I): Site URL : http://localhost:81/wp_live_tehnikac
-[21/Sep/2021:06:46:55] (I): WordPress Version : 5.8.1
-[21/Sep/2021:06:46:55] (I): Onboarding Version : 1.1.17
-[21/Sep/2021:06:46:55] (I): Multisite : No
-[21/Sep/2021:06:46:55] (I): Server Info : Apache/2.4.38 (Win64) OpenSSL/1.1.1b PHP/7.3.3
-[21/Sep/2021:06:46:55] (I): PHP Version : 7.3.3
-[21/Sep/2021:06:46:55] (I): HTTPS : No
-[21/Sep/2021:06:46:55] (I): PHP Max Execution Time : 600
-[21/Sep/2021:06:46:55] (I): PHP Max Input Vars : 1000
-[21/Sep/2021:06:46:55] (I): Max Upload Size : 2097152
-[21/Sep/2021:06:46:55] (I): Plugins:
-[21/Sep/2021:06:46:55] (I): [PLUGIN] Templates Patterns Collection : v1.1.17 (ThemeIsle)
+[28/Sep/2021:06:36:25] (I): WordPress Instance Info:
+[28/Sep/2021:06:36:25] (I): Home URL : http://localhost:81/wp_live_tehnikac
+[28/Sep/2021:06:36:25] (I): Site URL : http://localhost:81/wp_live_tehnikac
+[28/Sep/2021:06:36:25] (I): WordPress Version : 5.8.1
+[28/Sep/2021:06:36:25] (I): Onboarding Version : 1.1.17
+[28/Sep/2021:06:36:25] (I): Multisite : No
+[28/Sep/2021:06:36:25] (I): Server Info : Apache/2.4.38 (Win64) OpenSSL/1.1.1b PHP/7.3.3
+[28/Sep/2021:06:36:25] (I): PHP Version : 7.3.3
+[28/Sep/2021:06:36:25] (I): HTTPS : No
+[28/Sep/2021:06:36:25] (I): PHP Max Execution Time : 600
+[28/Sep/2021:06:36:25] (I): PHP Max Input Vars : 1000
+[28/Sep/2021:06:36:25] (I): Max Upload Size : 2097152
+[28/Sep/2021:06:36:25] (I): Plugins:
+[28/Sep/2021:06:36:25] (I): [PLUGIN] Templates Patterns Collection : v1.1.17 (ThemeIsle)
